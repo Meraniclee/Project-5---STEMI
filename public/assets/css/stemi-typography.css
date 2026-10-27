@@ -1,0 +1,62 @@
+/* Stemi's mapping to the original Project 4 pulsewise-typography.css tokens.
+ * Load this AFTER that stylesheet to preserve the shared typography scale.
+ */
+.stemi-app .stemi-logo strong { font-size: 23px; }
+.stemi-app .stemi-logo small { font-size: 10px; }
+.stemi-app .stemi-role { font-size: 10px; }
+.stemi-app .stemi-nav-link { font-size: 12px; }
+.stemi-app .stemi-nav-sub a, .stemi-app .stemi-nav-sub span { font-size: 11px; }
+.stemi-app .stemi-nav-label { font-size: 10px; }
+.stemi-app .stemi-sidebar-footer small, .stemi-app .stemi-sidebar-footer > strong { font-size: 10px; }
+.stemi-app .stemi-top-search input { font-size: 12px; }
+.stemi-app .stemi-top-search button { font-size: 11px; }
+.stemi-app .stemi-profile-copy strong { font-size: 12px; }
+.stemi-app .stemi-profile-copy small { font-size: 10px; }
+.stemi-app .stemi-dropdown a, .stemi-app .stemi-dropdown form button { font-size: 11px; }
+.stemi-app .stemi-page-banner h1 { font-size: var(--pw-type-page-title, 27px); }
+.stemi-app .stemi-eyebrow { font-size: var(--pw-type-eyebrow, 10px); }
+.stemi-app .stemi-page-banner p { font-size: var(--pw-type-page-subtitle, 13px); }
+.stemi-app .stemi-card-heading h2 { font-size: var(--pw-type-section-heading, 15px); }
+.stemi-app .stemi-card-heading p { font-size: var(--pw-type-help, 11px); }
+.stemi-app .stemi-info-heading h3 { font-size: var(--pw-type-secondary-heading, 13px); }
+.stemi-app .stemi-kpi strong { font-size: var(--pw-type-kpi-value, 25px); }
+.stemi-app .stemi-kpi-top { font-size: var(--pw-type-kpi-label, 12px); }
+.stemi-app .stemi-kpi small { font-size: var(--pw-type-kpi-support, 10px); }
+.stemi-app .stemi-table th { font-size: var(--pw-type-table-header, 11px); }
+.stemi-app .stemi-table td { font-size: var(--pw-type-table-body, 11px); }
+.stemi-app .stemi-table td strong { font-size: var(--pw-type-table-strong, 12px); }
+.stemi-app .stemi-finding-form label, .stemi-app .stemi-upload-form label { font-size: var(--pw-type-form-label, 11px); }
+.stemi-app .stemi-finding-form select,
+.stemi-app .stemi-finding-form textarea,
+.stemi-app .stemi-upload-form select,
+.stemi-app .stemi-upload-form input,
+.stemi-app .stemi-filter input { font-size: var(--pw-type-form-input, 12px); }
+.stemi-app .stemi-primary-btn { font-size: var(--pw-type-button, 11px); }
+.stemi-app .stemi-pill { font-size: var(--pw-type-badge, 9px); }
+.stemi-app .stemi-info-list dt,
+.stemi-app .stemi-info-list dd,
+.stemi-app .stemi-summary-grids dt,
+.stemi-app .stemi-summary-grids dd,
+.stemi-app .stemi-thumbnail small,
+.stemi-app .stemi-preview-copy small { font-size: var(--pw-type-meta, 10px); }
+.stemi-app .stemi-card, .stemi-app .stemi-exam-message { font-size: var(--pw-type-body, 12px); }
+.stemi-app .stemi-clinical-note, .stemi-app .stemi-file-area p { font-size: var(--pw-type-help, 11px); }
+.stemi-app .stemi-alert { font-size: var(--pw-type-validation, 10px); }
+@media (max-width: 1024px) {
+    .stemi-app .stemi-page-banner h1 { font-size: 24px; }
+    .stemi-app .stemi-card-heading h2 { font-size: 14px; }
+    .stemi-app .stemi-kpi strong { font-size: 23px; }
+}
+@media (max-width: 720px) {
+    .stemi-app .stemi-page-banner h1 { font-size: 22px; }
+    .stemi-app .stemi-card-heading h2 { font-size: 14px; }
+    .stemi-app .stemi-card-heading p { font-size: 10px; }
+    .stemi-app .stemi-kpi strong { font-size: 22px; }
+    .stemi-app .stemi-kpi-top { font-size: 11px; }
+    .stemi-app .stemi-table th, .stemi-app .stemi-table td { font-size: 10px; }
+    .stemi-app .stemi-finding-form label, .stemi-app .stemi-upload-form label { font-size: 10px; }
+    .stemi-app .stemi-finding-form select,
+    .stemi-app .stemi-finding-form textarea,
+    .stemi-app .stemi-upload-form select,
+    .stemi-app .stemi-upload-form input { font-size: 12px; }
+}

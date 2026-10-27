@@ -1,0 +1,559 @@
+/*
+ * Stemi landing page only.
+ * Recreates the Project 4 homepage composition without touching /login,
+ * its shared stylesheets, its authentication form, or authenticated pages.
+ */
+
+.stemi-homepage .sp-nav {
+    background: rgba(248, 252, 255, 0.5);
+}
+
+.stemi-homepage .sp-header-links a[aria-current="page"] {
+    color: #074d84;
+    border-bottom: 2px solid #078cf0;
+    padding-bottom: 7px;
+}
+
+.stemi-homepage .sp-home-main {
+    min-height: auto;
+    background: linear-gradient(
+        100deg,
+        rgba(239, 248, 255, 0.50),
+        rgba(236, 248, 255, 0.40)
+    );
+    overflow: hidden;
+}
+
+.stemi-homepage .sp-home-shell {
+    width: min(1360px, calc(100% - 64px));
+    margin: 0 auto;
+    padding: 14px 0 54px;
+}
+
+/* Main branding and ECG illustration. */
+.stemi-homepage .sp-home-hero {
+    position: relative;
+    min-height: 290px;
+}
+
+.stemi-homepage .sp-home-intro {
+    position: relative;
+    z-index: 2;
+    width: min(475px, 42%);
+}
+
+.stemi-homepage .sp-home-overline,
+.stemi-homepage .sp-home-section-eyebrow {
+    margin: 0;
+    font-size: 10px;
+    font-weight: 850;
+    letter-spacing: 0.18em;
+    line-height: 1.5;
+    color: #0874d0;
+}
+
+.stemi-homepage .sp-home-overline {
+    margin-bottom: 12px;
+}
+
+.stemi-homepage .sp-home-brand {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.stemi-homepage .sp-home-brand-mark {
+    width: 78px;
+    height: 72px;
+    flex: none;
+    color: #078cf0;
+}
+
+.stemi-homepage .sp-home-brand h1 {
+    margin: 0;
+    font-size: clamp(49px, 4vw, 67px);
+    font-weight: 850;
+    letter-spacing: -0.07em;
+    line-height: 1.05;
+    color: #061c3b;
+}
+
+.stemi-homepage .sp-home-brand h1 span {
+    color: #078cf0;
+}
+
+.stemi-homepage .sp-home-description {
+    max-width: 440px;
+    margin: 19px 0 0;
+    color: #466b91;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.stemi-homepage .sp-home-hero-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 13px;
+    margin-top: 21px;
+}
+
+.stemi-homepage .sp-home-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    min-height: 46px;
+    padding: 11px 21px;
+    border-radius: 9px;
+    font-size: 11px;
+    font-weight: 800;
+    line-height: 1.3;
+    transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+.stemi-homepage .sp-home-button-primary {
+    background: linear-gradient(110deg, #0875cf, #069fe0);
+    color: #fff;
+    box-shadow: 0 7px 18px rgba(7, 128, 199, 0.15);
+}
+
+.stemi-homepage .sp-home-button-outline {
+    min-width: 170px;
+    background: rgba(255, 255, 255, 0.66);
+    color: #0b3356;
+    border: 1px solid #9dbdd9;
+}
+
+.stemi-homepage .sp-home-button:hover,
+.stemi-homepage .sp-home-join-button:hover {
+    transform: translateY(-2px);
+}
+
+.stemi-homepage .sp-home-hero-art {
+    position: absolute;
+    z-index: 1;
+    left: 36%;
+    top: -12px;
+    width: 69%;
+    height: 260px;
+    pointer-events: none;
+}
+
+.stemi-homepage .sp-home-wave-svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+.stemi-homepage .sp-home-heart-shape,
+.stemi-homepage .sp-home-heart-pulse {
+    filter: drop-shadow(0 0 8px rgba(35, 174, 245, 0.85))
+            drop-shadow(0 0 22px rgba(35, 174, 245, 0.7));
+}
+
+.stemi-homepage .sp-home-motto {
+    position: absolute;
+    z-index: 2;
+    top: 212px;
+    right: 0;
+    color: #0b2b4c;
+    font-size: 16px;
+    line-height: 1.25;
+}
+
+.stemi-homepage .sp-home-motto strong {
+    display: block;
+    font-weight: 500;
+}
+
+.stemi-homepage .sp-home-motto > span {
+    display: block;
+    width: 48px;
+    height: 2px;
+    margin-top: 16px;
+    background: #078cf0;
+}
+
+/* Four features in one thin, translucent horizontal panel. */
+.stemi-homepage .sp-home-feature-bar {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    align-items: center;
+    min-height: 139px;
+    padding: 25px 18px;
+    border: 1px solid rgba(147, 196, 230, 0.65);
+    border-radius: 13px;
+    background: transparent;
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.stemi-homepage .sp-home-feature-item {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    min-width: 0;
+    padding: 4px 20px;
+}
+
+.stemi-homepage .sp-home-feature-item + .sp-home-feature-item {
+    border-left: 1px solid rgba(147, 196, 230, 0.65);
+}
+
+.stemi-homepage .sp-home-feature-icon {
+    display: grid;
+    place-items: center;
+    flex: 0 0 44px;
+    width: 44px;
+    height: 44px;
+    color: #6687a4;
+    border-radius: 12px;
+    background: rgba(235, 248, 255, 0.68);
+}
+
+.stemi-homepage .sp-home-feature-icon svg {
+    width: 26px;
+    height: 26px;
+}
+
+.stemi-homepage .sp-home-feature-item h2 {
+    margin: 0 0 5px;
+    font-size: 13px;
+    font-weight: 800;
+    color: #0a2444;
+}
+
+.stemi-homepage .sp-home-feature-item p {
+    margin: 0;
+    color: #6b87a1;
+    font-size: 11px;
+    line-height: 1.35;
+}
+
+/* Lower information columns. */
+.stemi-homepage .sp-home-about {
+    display: grid;
+    grid-template-columns: 1.15fr 0.86fr 0.97fr;
+    align-items: start;
+    column-gap: clamp(22px, 3.3vw, 65px);
+    margin-top: 52px;
+}
+
+.stemi-homepage .sp-home-about-copy h2 {
+    max-width: 540px;
+    margin: 12px 0 17px;
+    color: #061c3b;
+    font-size: clamp(32px, 2.8vw, 43px);
+    line-height: 1.08;
+    font-weight: 850;
+    letter-spacing: -0.046em;
+}
+
+.stemi-homepage .sp-home-about-copy > p:not(.sp-home-section-eyebrow) {
+    margin: 0;
+    max-width: 470px;
+    color: #5a7796;
+    font-size: 12px;
+    line-height: 1.55;
+}
+
+.stemi-homepage .sp-home-explore {
+    margin-top: 20px;
+    min-height: 41px;
+}
+
+.stemi-homepage .sp-home-benefits {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    margin: 39px 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.stemi-homepage .sp-home-benefits li {
+    position: relative;
+    padding-left: 36px;
+    min-height: 23px;
+    display: flex;
+    align-items: center;
+    color: #294663;
+    font-size: 11px;
+    line-height: 1.45;
+}
+
+.stemi-homepage .sp-home-benefits li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: grid;
+    place-items: center;
+    width: 23px;
+    height: 23px;
+    border-radius: 50%;
+    background: #078cf0;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 750;
+}
+
+.stemi-homepage .sp-home-join {
+    min-height: 240px;
+    padding: 24px 25px;
+    border: 1px solid rgba(124, 184, 227, 0.68);
+    border-radius: 14px;
+    background: transparent;
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+.stemi-homepage .sp-home-join h2 {
+    margin: 7px 0 8px;
+    font-size: 25px;
+    line-height: 1.18;
+    letter-spacing: -0.04em;
+    color: #061c3b;
+}
+
+.stemi-homepage .sp-home-join h2 span {
+    color: #078cf0;
+}
+
+.stemi-homepage .sp-home-join > p:not(.sp-home-section-eyebrow) {
+    margin: 0;
+    max-width: 270px;
+    font-size: 12px;
+    line-height: 1.55;
+    color: #547493;
+}
+
+.stemi-homepage .sp-home-join-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+    min-width: 177px;
+    min-height: 42px;
+    margin-top: 58px;
+    padding: 10px 16px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.92);
+    color: #102b48;
+    box-shadow: 0 10px 24px rgba(15, 74, 120, 0.1);
+    font-size: 11px;
+    font-weight: 800;
+    transition: transform 150ms ease;
+}
+
+.stemi-homepage .sp-footer {
+    background: rgba(239, 248, 254, 0.32);
+}
+
+/* Responsive adaptation does not affect /login. */
+@media (max-width: 1200px) {
+    .stemi-homepage .sp-home-intro {
+        width: 44%;
+    }
+
+    .stemi-homepage .sp-home-brand h1 {
+        font-size: 53px;
+    }
+
+    .stemi-homepage .sp-home-hero-art {
+        left: 37%;
+        width: 68%;
+    }
+
+    .stemi-homepage .sp-home-feature-item {
+        gap: 9px;
+        padding: 4px 12px;
+    }
+
+    .stemi-homepage .sp-home-feature-item h2 {
+        font-size: 12px;
+    }
+
+    .stemi-homepage .sp-home-about {
+        column-gap: 24px;
+    }
+}
+
+@media (max-width: 900px) {
+    .stemi-homepage .sp-home-shell {
+        padding-top: 22px;
+    }
+
+    .stemi-homepage .sp-home-hero {
+        min-height: 325px;
+    }
+
+    .stemi-homepage .sp-home-intro {
+        width: 55%;
+    }
+
+    .stemi-homepage .sp-home-brand h1 {
+        font-size: 48px;
+    }
+
+    .stemi-homepage .sp-home-description {
+        font-size: 14px;
+    }
+
+    .stemi-homepage .sp-home-hero-art {
+        left: 40%;
+        width: 71%;
+        top: 33px;
+        opacity: 0.8;
+    }
+
+    .stemi-homepage .sp-home-motto {
+        right: 0;
+        top: 260px;
+        font-size: 13px;
+    }
+
+    .stemi-homepage .sp-home-feature-bar {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        row-gap: 16px;
+        padding: 20px;
+    }
+
+    .stemi-homepage .sp-home-feature-item:nth-child(3) {
+        border-left: 0;
+    }
+
+    .stemi-homepage .sp-home-about {
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 28px;
+    }
+
+    .stemi-homepage .sp-home-join {
+        grid-column: 1 / -1;
+        width: min(100%, 450px);
+    }
+
+    .stemi-homepage .sp-home-join-button {
+        margin-top: 25px;
+    }
+}
+
+@media (max-width: 700px) {
+    .stemi-homepage .sp-home-shell {
+        width: min(100% - 36px, 500px);
+        padding: 20px 0 34px;
+    }
+
+    .stemi-homepage .sp-home-hero {
+        min-height: auto;
+        padding-bottom: 26px;
+    }
+
+    .stemi-homepage .sp-home-intro {
+        width: 100%;
+    }
+
+    .stemi-homepage .sp-home-overline {
+        font-size: 9px;
+    }
+
+    .stemi-homepage .sp-home-brand-mark {
+        width: 54px;
+        height: 54px;
+    }
+
+    .stemi-homepage .sp-home-brand h1 {
+        font-size: clamp(42px, 10vw, 56px);
+    }
+
+    .stemi-homepage .sp-home-description {
+        margin-top: 17px;
+        font-size: 13px;
+    }
+
+    .stemi-homepage .sp-home-hero-art {
+        position: relative;
+        top: auto;
+        left: auto;
+        width: 100%;
+        height: 150px;
+        margin-top: 12px;
+        opacity: 0.9;
+    }
+
+    .stemi-homepage .sp-home-hero-art .sp-home-wave-svg {
+        height: 100%;
+    }
+
+    .stemi-homepage .sp-home-motto {
+        position: relative;
+        top: auto;
+        right: auto;
+        width: max-content;
+        max-width: 100%;
+        margin-left: auto;
+        font-size: 13px;
+    }
+
+    .stemi-homepage .sp-home-feature-bar {
+        grid-template-columns: 1fr;
+        padding: 13px 17px;
+        gap: 0;
+    }
+
+    .stemi-homepage .sp-home-feature-item {
+        padding: 13px 4px;
+        border-left: 0 !important;
+    }
+
+    .stemi-homepage .sp-home-feature-item + .sp-home-feature-item {
+        border-top: 1px solid rgba(147, 196, 230, 0.65);
+    }
+
+    .stemi-homepage .sp-home-about {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        margin-top: 34px;
+    }
+
+    .stemi-homepage .sp-home-about-copy h2 {
+        font-size: 36px;
+    }
+
+    .stemi-homepage .sp-home-benefits {
+        margin-top: 0;
+    }
+
+    .stemi-homepage .sp-home-join {
+        width: 100%;
+        min-height: 210px;
+    }
+}
+
+@media (max-width: 390px) {
+    .stemi-homepage .sp-home-hero-actions {
+        gap: 9px;
+    }
+
+    .stemi-homepage .sp-home-button {
+        padding-inline: 13px;
+    }
+
+    .stemi-homepage .sp-home-button-outline {
+        min-width: 125px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .stemi-homepage .sp-home-button,
+    .stemi-homepage .sp-home-join-button {
+        transition: none;
+    }
+
+    .stemi-homepage .sp-home-button:hover,
+    .stemi-homepage .sp-home-join-button:hover {
+        transform: none;
+    }
+}

@@ -1,0 +1,781 @@
+/*
+ * STEMI public homepage and login presentation.
+ * Scoped to .stemi-public-page so authenticated dashboards stay unchanged.
+ * Loaded after stemi-public.css and stemi-public-pulsewise.css.
+ */
+
+.stemi-public-page {
+    --sp-navy: #082344;
+    --sp-blue: #078cf0;
+    --sp-muted: #587594;
+    --sp-border: #c8e2f3;
+    margin: 0;
+    color: var(--sp-navy);
+    background-color: #eaf5fe;
+    background-image: url('../images/Futuristic%20Cardiology%20Waveform%20Background.png');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.stemi-public-page [hidden] {
+    display: none !important;
+}
+
+.stemi-public-page a {
+    text-decoration: none;
+}
+
+.stemi-public-page button,
+.stemi-public-page input {
+    font: inherit;
+}
+
+.sp-nav {
+    position: relative;
+    z-index: 2;
+    min-height: 66px;
+    border-bottom: 1px solid rgba(198, 222, 240, 0.9);
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 1px 15px rgba(20, 73, 109, 0.035);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+}
+
+.sp-nav-inner,
+.sp-footer-inner {
+    width: min(1360px, calc(100% - 64px));
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 20px;
+    align-items: center;
+
+}
+
+.sp-nav-inner {
+    min-height: 66px;
+}
+
+.sp-mmu-brand {
+    display: inline-flex;
+    width: fit-content;
+    align-items: center;
+}
+
+.sp-mmu-brand img {
+    display: block;
+    width: 165px;
+    max-width: 100%;
+    max-height: 52px;
+    object-fit: contain;
+}
+
+.sp-header-links,
+.sp-footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(18px, 3vw, 45px);
+}
+
+.sp-header-links a {
+    font-size: 11px;
+    font-weight: 750;
+    color: #1b3857;
+}
+
+.sp-header-links a:hover,
+.sp-footer-links a:hover {
+    color: var(--sp-blue);
+}
+
+.sp-header-login {
+    justify-self: end;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 35px;
+    padding: 0 16px;
+    border-radius: 9px;
+    color: white !important;
+    font-size: 11px;
+    font-weight: 750;
+    background: linear-gradient(120deg, #0875cf, #069fe0);
+    box-shadow: 0 6px 16px rgba(7, 119, 199, 0.14);
+}
+
+.sp-header-login svg {
+    width: 16px;
+    height: 16px;
+}
+
+.sp-main {
+    position: relative;
+    overflow: hidden;
+    min-height: calc(100vh - 141px);
+    background-image:
+        linear-gradient(90deg, rgba(240, 249, 255, 0.69) 0%, rgba(231, 246, 255, 0.58) 46%, rgba(234, 245, 255, 0.47) 100%);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.sp-main-inner {
+    position: relative;
+    width: min(1360px, calc(100% - 64px));
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(310px, 1.12fr) minmax(240px, 0.95fr) minmax(320px, 394px);
+    grid-template-rows: minmax(580px, auto) auto;
+    align-items: start;
+    column-gap: clamp(15px, 2.6vw, 46px);
+    row-gap: 0;
+    padding: 27px 0 15px;
+}
+
+.sp-hero-copy {
+    grid-column: 1;
+    grid-row: 1;
+    min-width: 0;
+}
+
+.sp-site-brand {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    min-height: 88px;
+}
+
+.sp-brand-mark {
+    flex: none;
+    width: 65px;
+    height: 65px;
+    color: #078cf0;
+}
+
+.sp-site-brand-copy {
+    min-width: 0;
+}
+
+.sp-site-name {
+    font-size: clamp(32px, 3.2vw, 48px);
+    font-weight: 850;
+    line-height: 1.05;
+    letter-spacing: -0.065em;
+    color: #0a2444;
+}
+
+.sp-site-name span,
+.sp-footer-brand strong span {
+    color: #078cf0;
+}
+
+.sp-site-caption {
+    margin-top: 5px;
+    color: #5a7897;
+    font-size: 11px;
+    font-weight: 650;
+    white-space: normal;
+}
+
+.sp-kicker {
+    margin: 47px 0 10px;
+    font-size: 10px;
+    font-weight: 850;
+    color: #0874d0;
+    letter-spacing: 0.16em;
+    line-height: 1.4;
+}
+
+.sp-hero-copy h1 {
+    max-width: 510px;
+    margin: 0 0 23px;
+    color: #061c3b;
+    font-size: clamp(40px, 4.7vw, 66px);
+    font-weight: 850;
+    line-height: 1.06;
+    letter-spacing: -0.06em;
+}
+
+.sp-hero-copy h1 span {
+    color: #078cf0;
+}
+
+.sp-lead {
+    max-width: 470px;
+    margin: 0;
+    font-size: 12px;
+    line-height: 1.7;
+    color: #507393;
+}
+
+.sp-heart-art {
+    position: relative;
+    grid-column: 2;
+    grid-row: 1;
+    align-self: center;
+    width: 100%;
+    max-width: 385px;
+    height: 380px;
+    margin: 52px auto 0;
+    display: grid;
+    place-items: center;
+    color: #fff;
+    isolation: isolate;
+}
+
+.sp-heart-ring {
+    position: absolute;
+    left: 50%;
+    top: 43%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    border: 1px solid rgba(112, 203, 254, 0.29);
+}
+
+.sp-heart-ring-outer { width: 100%; aspect-ratio: 1; }
+.sp-heart-ring-middle { width: 84%; aspect-ratio: 1; }
+.sp-heart-ring-inner { width: 68%; aspect-ratio: 1; background: radial-gradient(circle, rgba(58, 172, 239, 0.55) 0%, rgba(94, 202, 249, 0.23) 45%, transparent 71%); }
+
+.sp-heart-svg {
+    z-index: 1;
+    width: 64%;
+    height: auto;
+    transform: translateY(-28px);
+    filter: drop-shadow(0 0 12px rgba(38, 176, 250, 0.9)) drop-shadow(0 4px 22px rgba(55, 178, 236, 0.65));
+}
+
+.sp-pulse-line {
+    position: absolute;
+    bottom: 15px;
+    left: -15%;
+    width: 130%;
+    height: 78px;
+    color: white;
+    filter: drop-shadow(0 0 5px rgba(48, 176, 246, 0.8));
+}
+
+.sp-login-panel {
+    grid-column: 3;
+    grid-row: 1;
+    width: 100%;
+    margin-top: 39px;
+    padding: 37px 39px 38px;
+    border-radius: 21px;
+    border: 1px solid rgba(183, 216, 238, 0.66);
+    background: transparent;
+    box-shadow: 0 14px 42px rgba(20, 76, 113, 0.035);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(15px);
+}
+
+.sp-login-eyebrow {
+    font-size: 10px;
+    font-weight: 850;
+    letter-spacing: 0.15em;
+    color: #0874d0;
+}
+
+.sp-login-intro h2 {
+    margin: 7px 0 10px;
+    font-size: 28px;
+    line-height: 1.15;
+    letter-spacing: -0.04em;
+    color: #102b48;
+}
+
+.sp-login-intro p {
+    margin: 0 0 26px;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #6382a2;
+}
+
+.sp-login-form label:not(.sp-remember) {
+    display: block;
+    margin: 0 0 7px;
+    font-size: 11px;
+    font-weight: 800;
+    color: #163858;
+}
+
+.sp-input-group {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 51px;
+    margin-bottom: 19px;
+    overflow: hidden;
+    border-radius: 9px;
+    background: rgba(242, 249, 255, 0.85);
+    border: 1px solid #dae9f5;
+    box-shadow: 0 3px 12px rgba(20, 76, 113, 0.02);
+}
+
+.sp-input-group:focus-within {
+    border-color: #72bfe9;
+    box-shadow: 0 0 0 4px rgba(7, 140, 240, 0.07);
+}
+
+.sp-input-icon {
+    flex: 0 0 46px;
+    height: 26px;
+    display: grid;
+    place-items: center;
+    color: #7296b6;
+    border-right: 1px solid #c9e0ef;
+}
+
+.sp-input-icon svg {
+    width: 18px;
+    height: 18px;
+}
+
+.sp-login-form .sp-input-group input {
+    flex: 1;
+    min-width: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0 12px;
+    border: 0;
+    border-radius: 0;
+    outline: none;
+    background: transparent;
+    color: #18395c;
+    font-size: 12px;
+    box-shadow: none;
+}
+
+.sp-login-form .sp-input-group input:focus-visible {
+    outline: none;
+    box-shadow: none;
+}
+
+.sp-login-form .sp-input-group input::placeholder {
+    color: #8fa4bc;
+}
+
+.sp-login-form .sp-password-toggle {
+    width: 44px;
+    height: 100%;
+    flex: 0 0 44px;
+    border: 0;
+    border-left: 1px solid #dde9f5;
+    border-radius: 0;
+    background: rgba(251, 254, 255, 0.75);
+    color: #7996b0;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+}
+
+.sp-password-toggle:hover {
+    color: #0874d0;
+    background: white;
+}
+
+.sp-password-toggle:focus-visible,
+.sp-header-login:focus-visible,
+.sp-sign-in:focus-visible {
+    outline: 3px solid #72bfe9;
+    outline-offset: 2px;
+}
+
+.sp-password-toggle svg {
+    width: 19px;
+    height: 19px;
+}
+
+.sp-login-form .sp-remember {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin: -4px 0 0;
+    color: #496784;
+    font-size: 12px;
+    font-weight: 450;
+    cursor: pointer;
+}
+
+.sp-login-form .sp-remember input {
+    appearance: auto;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    padding: 0;
+    accent-color: #078cf0;
+    border-radius: 2px;
+}
+
+.sp-login-form .sp-sign-in {
+    display: block;
+    width: 100%;
+    min-height: 51px;
+    margin: 22px 0 0;
+    padding: 13px;
+    border: 0;
+    border-radius: 10px;
+    color: white;
+    background: linear-gradient(100deg, #0875cf, #079eec);
+    font-size: 13px;
+    font-weight: 850;
+    cursor: pointer;
+    box-shadow: 0 7px 19px rgba(0, 119, 210, 0.15);
+}
+
+.sp-sign-in:hover {
+    filter: brightness(1.04);
+}
+
+.sp-form-alert,
+.sp-form-success {
+    padding: 11px 12px;
+    border-radius: 8px;
+    font-size: 11px;
+    line-height: 1.5;
+    margin-bottom: 16px;
+}
+
+.sp-form-alert {
+    border: 1px solid #e5b4b4;
+    color: #933333;
+    background: #fff2f2;
+}
+
+.sp-form-success {
+    border: 1px solid #b9e8d5;
+    color: #226344;
+    background: #edfef6;
+}
+
+.sp-features {
+    grid-column: 1 / 3;
+    grid-row: 2;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    padding-bottom: 0;
+    align-self: end;
+}
+
+.sp-feature {
+    min-width: 0;
+    min-height: 74px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 11px 12px;
+    border: 1px solid rgba(166, 210, 242, 0.75);
+    border-radius: 13px;
+    background: rgba(237, 247, 255, 0.43);
+    backdrop-filter: blur(9px);
+    -webkit-backdrop-filter: blur(9px);
+}
+
+.sp-feature-icon {
+    flex: 0 0 39px;
+    width: 39px;
+    height: 39px;
+    display: grid;
+    place-items: center;
+    border-radius: 11px;
+    color: #698ca9;
+    background: rgba(225, 244, 255, 0.75);
+}
+
+.sp-feature-icon svg {
+    width: 23px;
+    height: 23px;
+}
+
+.sp-feature h2 {
+    margin: 0 0 4px;
+    font-size: 11px;
+    font-weight: 850;
+    line-height: 1.25;
+    color: #193956;
+}
+
+.sp-feature p {
+    margin: 0;
+    font-size: 9px;
+    line-height: 1.4;
+    color: #6585a4;
+}
+
+.sp-footer {
+    min-height: 75px;
+    border-top: 1px solid rgba(195, 220, 239, 0.84);
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(9px);
+}
+
+.sp-footer-inner {
+    min-height: 75px;
+}
+
+.sp-footer-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.sp-footer-brand > svg {
+    width: 39px;
+    height: 39px;
+    color: #078cf0;
+}
+
+.sp-footer-brand strong {
+    display: block;
+    font-size: 16px;
+    font-weight: 850;
+    letter-spacing: -0.05em;
+    color: #0a2444;
+}
+
+.sp-footer-brand small {
+    display: block;
+    font-size: 9px;
+    color: #6886a0;
+}
+
+.sp-footer-links {
+    gap: 26px;
+}
+
+.sp-footer-links a {
+    color: #6684a4;
+    font-size: 10px;
+}
+
+.sp-footer-right {
+    justify-self: end;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.sp-footer-right img {
+    display: block;
+    width: 74px;
+    max-height: 35px;
+    object-fit: contain;
+}
+
+.sp-footer-right span {
+    color: #7187a6;
+    font-size: 9px;
+    white-space: nowrap;
+}
+
+.sp-main-login .sp-main-inner {
+    grid-template-rows: minmax(580px, auto) auto;
+}
+
+@media (max-width: 1200px) {
+    .sp-main-inner {
+        grid-template-columns: minmax(260px, 1fr) minmax(190px, 0.8fr) minmax(300px, 360px);
+        column-gap: 20px;
+    }
+
+    .sp-login-panel {
+        padding: 30px 24px;
+    }
+
+    .sp-site-name {
+        font-size: 38px;
+    }
+
+    .sp-hero-copy h1 {
+        font-size: clamp(39px, 4.8vw, 58px);
+    }
+
+    .sp-feature {
+        padding: 9px;
+    }
+}
+
+@media (max-width: 980px) {
+    .sp-main-inner {
+        grid-template-columns: minmax(0, 1fr) minmax(300px, 390px);
+        grid-template-rows: auto auto;
+        row-gap: 28px;
+        padding: 32px 0;
+    }
+
+    .sp-hero-copy {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .sp-heart-art {
+        display: none;
+    }
+
+    .sp-login-panel {
+        grid-column: 2;
+        grid-row: 1;
+        margin-top: 18px;
+    }
+
+    .sp-features {
+        grid-column: 1 / -1;
+        grid-row: 2;
+    }
+
+    .sp-kicker {
+        margin-top: 30px;
+    }
+
+    .sp-hero-copy h1 {
+        font-size: clamp(37px, 5.2vw, 56px);
+    }
+
+    .sp-footer-right span {
+        display: none;
+    }
+}
+
+@media (max-width: 700px) {
+    .stemi-public-page {
+        background-image: url('../images/cardiac-auscultation-map-mobile.png');
+    }
+
+    .sp-nav-inner,
+    .sp-footer-inner,
+    .sp-main-inner {
+        width: min(100% - 36px, 500px);
+    }
+
+    .sp-nav-inner {
+        grid-template-columns: 1fr auto;
+        gap: 12px;
+    }
+
+    .sp-mmu-brand img {
+        width: 130px;
+    }
+
+    .sp-header-links {
+        display: none;
+    }
+
+    .sp-main {
+        background-image:
+            linear-gradient(180deg, rgba(241, 251, 255, 0.70), rgba(240, 248, 255, 0.58));
+        background-position: center center;
+        background-size: cover;
+    }
+
+    .sp-main-inner,
+    .sp-main-login .sp-main-inner {
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+        padding: 22px 0 29px;
+    }
+
+    .sp-hero-copy,
+    .sp-login-panel,
+    .sp-features {
+        width: 100%;
+    }
+
+    .sp-site-brand {
+        gap: 10px;
+        min-height: 65px;
+    }
+
+    .sp-brand-mark {
+        width: 48px;
+        height: 48px;
+    }
+
+    .sp-site-name {
+        font-size: 31px;
+    }
+
+    .sp-site-caption {
+        font-size: 10px;
+    }
+
+    .sp-kicker {
+        margin-top: 25px;
+    }
+
+    .sp-hero-copy h1 {
+        font-size: clamp(39px, 10vw, 54px);
+        max-width: 520px;
+    }
+
+    .sp-lead {
+        font-size: 12px;
+    }
+
+    .sp-login-panel {
+        margin: 0;
+        padding: 26px 24px;
+        background: rgba(245, 251, 255, 0.84);
+    }
+
+    .sp-features {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .sp-feature {
+        min-height: 66px;
+    }
+
+    .sp-footer-inner {
+        grid-template-columns: 1fr auto;
+        padding: 15px 0;
+        gap: 10px;
+    }
+
+    .sp-footer-links {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        gap: 20px;
+    }
+
+    .sp-footer-right {
+        grid-column: 2;
+        grid-row: 1;
+    }
+}
+
+@media (max-width: 390px) {
+    .sp-site-caption {
+        font-size: 9px;
+    }
+
+    .sp-site-name {
+        font-size: 29px;
+    }
+
+    .sp-login-panel {
+        padding: 23px 17px;
+    }
+
+    .sp-footer-right img {
+        width: 60px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .sp-header-login,
+    .sp-sign-in {
+        transition: none;
+    }
+}

@@ -1,0 +1,30 @@
+/* ECG Upload page only: center file selection and submit controls. */
+
+.stemi-upload-form .stemi-upload-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.stemi-upload-form .stemi-upload-controls input[type="file"] {
+    display: block;
+    width: fit-content;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    font-size: 12px;
+}
+
+.stemi-upload-form .stemi-upload-controls .stemi-primary-btn {
+    width: auto;
+    margin: 0;
+}
+
+.stemi-upload-form .stemi-upload-actions {
+    justify-content: flex-end;
+}

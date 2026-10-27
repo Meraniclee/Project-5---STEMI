@@ -1,0 +1,1111 @@
+/* ============================================================================
+   PULSEWISE / HeartScope
+   Global Typography Standard
+
+   Changes ONLY:
+   - Font family
+   - Font size
+   ============================================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400..800&display=swap');
+
+
+/* ==========================================================================
+   GLOBAL FONT FAMILY
+   ========================================================================== */
+
+html,
+body,
+button,
+input,
+select,
+textarea {
+    font-family:
+        Inter,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+}
+
+
+/* ==========================================================================
+   TYPOGRAPHY TOKENS
+   ========================================================================== */
+
+:root {
+    --pw-type-page-title: 27px;
+    --pw-type-eyebrow: 10px;
+    --pw-type-page-subtitle: 13px;
+
+    --pw-type-section-heading: 15px;
+    --pw-type-secondary-heading: 13px;
+
+    --pw-type-kpi-value: 25px;
+    --pw-type-kpi-label: 12px;
+    --pw-type-kpi-support: 10px;
+
+    --pw-type-table-header: 11px;
+    --pw-type-table-body: 11px;
+    --pw-type-table-strong: 12px;
+
+    --pw-type-form-label: 11px;
+    --pw-type-form-input: 12px;
+    --pw-type-validation: 10px;
+
+    --pw-type-button: 11px;
+    --pw-type-badge: 9px;
+
+    --pw-type-body: 12px;
+    --pw-type-meta: 10px;
+    --pw-type-help: 11px;
+
+    --pw-type-profile-name: 17px;
+    --pw-type-profile-email: 10px;
+}
+
+
+/* ==========================================================================
+   MAIN PAGE TITLES
+   ========================================================================== */
+
+.welcome-copy h1,
+.patient-page-header h1,
+.management-header h1,
+.sound-page-header h1,
+.settings-page-header h1,
+.report-page-header h1,
+.doctor-welcome h1,
+.doctor-page-header h1,
+.examination-header h1,
+.consultant-welcome h1,
+.consultant-page-header h1,
+.pr-page-header h1,
+.doctor-placeholder h1,
+.consultant-placeholder h1,
+.module-placeholder h1,
+.pw-login-heading h2 {
+    font-size: var(--pw-type-page-title);
+}
+
+
+/* ==========================================================================
+   EYEBROWS / SECTION LABELS
+   ========================================================================== */
+
+.sound-eyebrow,
+.patient-eyebrow,
+.management-eyebrow,
+.settings-eyebrow,
+.report-eyebrow,
+.doctor-eyebrow,
+.consultant-eyebrow,
+.pr-eyebrow,
+.settings-panel-eyebrow,
+.doctor-profile-role,
+.consultant-profile-role,
+.pr-patient-id-pill,
+.pr-exam-label,
+.consultant-exam-label,
+.consultant-patient-label,
+.pw-login-eyebrow,
+.pw-auth-eyebrow,
+.pw-eyebrow,
+.pw-section-eyebrow,
+.pw-about-cta-eyebrow {
+    font-size: var(--pw-type-eyebrow);
+}
+
+
+/* ==========================================================================
+   PAGE SUBTITLES
+   ========================================================================== */
+
+.welcome-copy p,
+.patient-page-header p,
+.management-header p,
+.sound-page-header p,
+.settings-page-header p,
+.report-page-header p,
+.doctor-welcome p,
+.doctor-page-header p,
+.examination-header p,
+.consultant-welcome p,
+.consultant-page-header p,
+.pr-page-header p,
+.doctor-placeholder p,
+.consultant-placeholder p,
+.module-placeholder-note,
+.pw-login-heading > p {
+    font-size: var(--pw-type-page-subtitle);
+}
+
+
+/* ==========================================================================
+   CARD / SECTION HEADINGS
+   ========================================================================== */
+
+.panel-heading h2,
+.patient-panel-heading h2,
+.management-panel-heading h2,
+.form-section-heading h2,
+.sound-section-heading h2,
+.settings-panel-heading h2,
+.report-panel-heading h2,
+.doctor-panel-heading h2,
+.doctor-quick-heading h2,
+.location-card-heading h2,
+.examination-summary-heading h2,
+.consultant-panel-heading h2,
+.consultant-section-heading h2,
+.pr-section-heading h2,
+.pr-auscultation-legend h2,
+.patient-history-heading h2,
+.doctor-profile-heading h2,
+.consultant-profile-heading h2,
+.user-form-side-card h2 {
+    font-size: var(--pw-type-section-heading);
+}
+
+
+/* ==========================================================================
+   SECONDARY HEADINGS
+   ========================================================================== */
+
+.patient-examination-header h3,
+.consultant-examination-heading h3,
+.finding-section-title strong,
+.settings-storage-heading,
+.report-breakdown-heading,
+.pr-auscultation-title,
+.pr-empty-history strong,
+.doctor-empty-table strong,
+.management-empty strong,
+.pw-step strong {
+    font-size: var(--pw-type-secondary-heading);
+}
+
+
+/* ==========================================================================
+   KPI / STATISTICS
+   ========================================================================== */
+
+.stat-number,
+.patient-summary-cards strong,
+.management-stat-card strong,
+.settings-stat-grid strong,
+.report-stat-grid strong,
+.doctor-stat-grid article > div > strong,
+.consultant-stat-grid article > div > strong {
+    font-size: var(--pw-type-kpi-value);
+}
+
+
+.stat-label,
+.patient-summary-cards span,
+.management-stat-card span:not(.management-stat-icon),
+.settings-stat-grid span,
+.report-stat-grid span,
+.doctor-stat-grid article > div > span,
+.consultant-stat-grid article > div > span {
+    font-size: var(--pw-type-kpi-label);
+}
+
+
+.stat-card small,
+.management-stat-card small,
+.doctor-stat-grid article small,
+.consultant-stat-grid article small {
+    font-size: var(--pw-type-kpi-support);
+}
+
+
+/* ==========================================================================
+   TABLES
+   ========================================================================== */
+
+.heartscope-table th,
+.patient-table th,
+.management-table th,
+.doctor-table th,
+.consultant-table th,
+.report-table th,
+.settings-table th {
+    font-size: var(--pw-type-table-header);
+}
+
+
+.heartscope-table td,
+.patient-table td,
+.management-table td,
+.doctor-table td,
+.consultant-table td,
+.report-table td,
+.settings-table td {
+    font-size: var(--pw-type-table-body);
+}
+
+
+.heartscope-table td strong,
+.patient-table td strong,
+.management-table td strong,
+.doctor-table td strong,
+.consultant-table td strong,
+.report-table td strong,
+.settings-table td strong,
+.table-person strong,
+.management-user-cell strong,
+.management-contact strong,
+.doctor-case-copy strong,
+.consultant-activity-copy strong {
+    font-size: var(--pw-type-table-strong);
+}
+
+
+/* ==========================================================================
+   FORMS
+   ========================================================================== */
+
+.sound-field label,
+.patient-field label,
+.user-field label,
+.exam-field label,
+.pw-form-group label {
+    font-size: var(--pw-type-form-label);
+}
+
+
+.sound-field input,
+.sound-field select,
+.patient-field input,
+.patient-field select,
+.user-field input,
+.user-field select,
+.exam-field input,
+.exam-field select,
+.exam-field textarea,
+.patient-filter-form input,
+.patient-filter-form select,
+.management-search-field input,
+.management-filter-form select,
+.doctor-filter-bar input,
+.doctor-filter-bar select,
+.consultant-filter-bar input,
+.consultant-filter-bar select,
+.consultant-patient-search input,
+.pw-input-shell input,
+.sound-confirm-field input,
+.sound-confirm-field select {
+    font-size: var(--pw-type-form-input) !important;
+}
+
+
+.sound-error-box,
+.patient-error-box,
+.form-error-summary,
+.sound-confirm-error,
+.pw-auth-alert {
+    font-size: var(--pw-type-validation);
+}
+
+
+/* ==========================================================================
+   BUTTONS / ACTION LINKS
+   ========================================================================== */
+
+.primary-button,
+.outline-button,
+.upload-drop-zone > span:last-child,
+.patient-primary-button,
+.patient-view-button,
+.patient-edit-button,
+.patient-filter-button,
+.patient-reset-button,
+.management-primary-button,
+.management-filter-button,
+.management-reset-button,
+.action-button,
+.form-cancel-button,
+.form-submit-button,
+.sound-cancel-button,
+.sound-submit-button,
+.sound-choose-files-button,
+.sound-confirm-button,
+.report-print-button,
+.report-view-button,
+.doctor-primary-button,
+.doctor-small-button,
+.doctor-filter-bar button,
+.doctor-filter-bar > a,
+.doctor-cancel-button,
+.doctor-secondary-action,
+.doctor-primary-action,
+.consultant-filter-bar button,
+.consultant-filter-bar > a,
+.consultant-patient-search button,
+.consultant-patient-search a,
+.consultant-view-button,
+.recording-delete-button,
+.hs-upload-button,
+.pw-login-button,
+.pw-primary-button,
+.pw-secondary-button,
+.pw-about-cta-button,
+.pw-signin-button {
+    font-size: var(--pw-type-button);
+}
+
+
+/* ==========================================================================
+   BADGES / STATUS PILLS
+   ========================================================================== */
+
+.status-badge,
+.patient-status,
+.patient-count-pill,
+.management-status,
+.management-patients-managed,
+.doctor-status,
+.doctor-mobile-assigned,
+.recording-count,
+.consultant-status,
+.consultant-access-badge,
+.report-readonly,
+.settings-environment-badge,
+.settings-status,
+.pr-location-badge,
+.pr-record-count,
+.pr-file-type,
+.pr-outcome-pill,
+.consultant-location-badge,
+.exam-location-badge,
+.location-recording-count {
+    font-size: var(--pw-type-badge);
+}
+
+
+/* ==========================================================================
+   GENERAL BODY / SUPPORTING COPY
+   ========================================================================== */
+
+.panel-heading p,
+.patient-panel-heading p,
+.management-panel-heading p,
+.form-section-heading p,
+.sound-section-heading p,
+.settings-panel-heading p,
+.report-panel-heading p,
+.doctor-panel-heading p,
+.doctor-quick-heading p,
+.location-card-heading p,
+.examination-summary-heading p,
+.consultant-panel-heading p,
+.consultant-section-heading p,
+.pr-section-heading p,
+.pr-auscultation-copy > p,
+.pw-auth-hero-content p,
+.pw-section-copy p,
+.pw-about-copy p,
+.pw-about-cta-content p,
+.pw-benefit,
+.pw-step p {
+    font-size: var(--pw-type-body);
+}
+
+
+/* ==========================================================================
+   METADATA / DATE / TIME / IDs
+   ========================================================================== */
+
+.management-user-cell span,
+.management-contact span,
+.mobile-user-heading > div span,
+.patient-mobile-header > div:nth-child(2) > span,
+.patient-mobile-details dt,
+.patient-mobile-details dd,
+.doctor-case-copy span,
+.doctor-muted,
+.doctor-mobile-case-heading > div:nth-child(2) > span,
+.doctor-mobile-details dt,
+.doctor-mobile-details dd,
+.consultant-activity-copy span,
+.consultant-mobile-heading div span,
+.consultant-mobile-details dt,
+.consultant-mobile-details dd,
+.pr-recording-details dt,
+.pr-recording-details dd,
+.pr-recording-footer span,
+.pr-examination-item time,
+.pr-examination-item time small,
+.pr-examination-doctor span,
+.pr-examination-preview span,
+.pr-examination-meta-grid span,
+.consultant-patient-summary dt,
+.consultant-patient-summary dd,
+.consultant-record-summary span,
+.consultant-examination-heading p,
+.consultant-exam-summary span,
+.report-profile-summary dt,
+.report-profile-summary dd,
+.settings-detail-list dt,
+.settings-detail-list dd,
+.pw-login-footer-note p,
+.pw-footer-owner,
+.pw-footer-brand small {
+    font-size: var(--pw-type-meta);
+}
+
+
+/* ==========================================================================
+   HELP / INFORMATIONAL TEXT
+   ========================================================================== */
+
+.sound-field small,
+.patient-info-banner,
+.patient-edit-warning span,
+.side-security-note span,
+.settings-warning div span,
+.settings-system-note span,
+.doctor-profile-note span,
+.consultant-profile-note span,
+.consultant-readonly-notice div span,
+.report-readonly-notice span,
+.pr-auscultation-note,
+.pr-empty-recordings p,
+.pr-no-findings,
+.pr-empty-history,
+.pw-account-help,
+.pw-access-divider p {
+    font-size: var(--pw-type-help);
+}
+
+
+/* ==========================================================================
+   PROFILE TYPOGRAPHY
+   ========================================================================== */
+
+.profile-copy strong,
+.doctor-profile-heading h2,
+.consultant-profile-heading h2 {
+    font-size: var(--pw-type-profile-name);
+}
+
+
+.profile-copy small,
+.doctor-profile-heading p,
+.consultant-profile-heading p {
+    font-size: var(--pw-type-profile-email);
+}
+
+
+/* ==========================================================================
+   SIDEBAR / TOPBAR
+   ========================================================================== */
+
+.sidebar-link {
+    font-size: 12px;
+}
+
+
+.sidebar-brand-name {
+    font-size: 23px;
+}
+
+
+.sidebar-brand-subtitle {
+    font-size: 10px;
+}
+
+
+.pulsewise-role-indicator,
+.pulsewise-sidebar-tagline {
+    font-size: 10px;
+}
+
+
+.topbar-search input {
+    font-size: 12px;
+}
+
+
+.profile-dropdown-system strong,
+.profile-dropdown-link,
+.profile-logout {
+    font-size: 11px;
+}
+
+
+.profile-dropdown-system span {
+    font-size: 10px;
+}
+
+
+/* ==========================================================================
+   SOUND UPLOAD
+   ========================================================================== */
+
+.sound-drop-zone strong,
+.sound-files-only-zone > strong {
+    font-size: 13px;
+}
+
+
+.sound-drop-zone > span:not(.drop-zone-icon),
+.sound-files-only-zone > span:not(.drop-zone-icon) {
+    font-size: 11px;
+}
+
+
+.sound-drop-zone small,
+.selected-file-copy span,
+.location-item span,
+.recognition-example span {
+    font-size: 10px;
+}
+
+
+.selected-files-empty,
+.selected-file-copy strong,
+.location-item strong,
+.recognition-example code {
+    font-size: 11px;
+}
+
+
+.selected-location,
+.location-code {
+    font-size: 9px;
+}
+
+
+.sound-confirm-header h2 {
+    font-size: var(--pw-type-section-heading);
+}
+
+
+.sound-confirm-header p,
+.sound-confirm-summary strong,
+.sound-confirm-summary span {
+    font-size: var(--pw-type-help);
+}
+
+
+/* ==========================================================================
+   PATIENT RECORD / EXAMINATION DETAIL
+   ========================================================================== */
+
+.pr-recording-card-header > div > strong,
+.pr-examination-doctor strong,
+.pr-examination-preview strong,
+.pr-doctor-note strong,
+.pr-findings-grid header strong,
+.patient-doctor-notes strong,
+.patient-finding-heading strong,
+.consultant-recording-card > div:nth-child(2) > strong,
+.consultant-doctor-notes strong,
+.consultant-finding-heading strong,
+.recording-player-heading strong {
+    font-size: 11px;
+}
+
+
+.pr-recording-card-header > div > span,
+.pr-waveform-preview small,
+.pr-doctor-note p,
+.pr-finding-notes,
+.patient-doctor-notes p,
+.patient-finding-notes p,
+.consultant-recording-card > div:nth-child(2) > span,
+.consultant-doctor-notes p,
+.consultant-finding-notes p,
+.recording-player-heading div span,
+.recording-file-info span {
+    font-size: 10px;
+}
+
+
+.pr-findings-grid dt,
+.pr-findings-grid dd,
+.patient-finding-card dt,
+.patient-finding-card dd,
+.consultant-finding-card dt,
+.consultant-finding-card dd {
+    font-size: 10px;
+}
+
+
+/* ==========================================================================
+   UPLOAD PROGRESS
+   ========================================================================== */
+
+.hs-upload-heading h2 {
+    font-size: var(--pw-type-section-heading);
+}
+
+
+.hs-upload-heading p,
+.hs-upload-file-name,
+.hs-upload-status {
+    font-size: var(--pw-type-body);
+}
+
+
+.hs-upload-file-meta,
+.hs-upload-stat-row {
+    font-size: var(--pw-type-meta);
+}
+
+
+.hs-upload-percent {
+    font-size: 22px;
+}
+
+
+/* ==========================================================================
+   AUTHENTICATION
+   ========================================================================== */
+
+.pw-auth-brand-subtitle,
+.pw-login-heading > p,
+.pw-remember {
+    font-size: 12px;
+}
+
+
+.pw-auth-benefit strong,
+.pw-role-card strong {
+    font-size: 12px;
+}
+
+
+.pw-auth-benefit span,
+.pw-role-card span {
+    font-size: 10px;
+}
+
+
+.pw-signin-button,
+.pw-back-home {
+    font-size: 11px;
+}
+
+
+/* ==========================================================================
+   PUBLIC HOMEPAGE
+   ========================================================================== */
+
+.pw-navigation a,
+.pw-login-button {
+    font-size: 12px;
+}
+
+
+.pw-highlight strong {
+    font-size: 14px;
+}
+
+
+.pw-highlight span {
+    font-size: 11px;
+}
+
+
+.pw-step-number,
+.pw-benefit,
+.pw-about-cta-button,
+.pw-footer-navigation a {
+    font-size: 11px;
+}
+
+
+/*
+   Homepage branding and hero display text intentionally retain their
+   existing display sizes. They still inherit Inter as the font family.
+*/
+
+
+/* ==========================================================================
+   TABLET
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+
+    :root {
+        --pw-type-page-title: 24px;
+        --pw-type-page-subtitle: 12px;
+        --pw-type-section-heading: 14px;
+        --pw-type-kpi-value: 23px;
+    }
+
+}
+
+
+/* ==========================================================================
+   MOBILE
+   ========================================================================== */
+
+@media (max-width: 720px) {
+
+    :root {
+        --pw-type-page-title: 22px;
+        --pw-type-eyebrow: 10px;
+        --pw-type-page-subtitle: 12px;
+
+        --pw-type-section-heading: 14px;
+        --pw-type-secondary-heading: 12px;
+
+        --pw-type-kpi-value: 22px;
+        --pw-type-kpi-label: 11px;
+        --pw-type-kpi-support: 10px;
+
+        --pw-type-table-header: 10px;
+        --pw-type-table-body: 10px;
+        --pw-type-table-strong: 11px;
+
+        --pw-type-form-label: 10px;
+        --pw-type-form-input: 12px;
+        --pw-type-validation: 10px;
+
+        --pw-type-button: 11px;
+        --pw-type-badge: 9px;
+
+        --pw-type-body: 11px;
+        --pw-type-meta: 10px;
+        --pw-type-help: 10px;
+
+        --pw-type-profile-name: 16px;
+        --pw-type-profile-email: 10px;
+    }
+
+
+    .sidebar-link {
+        font-size: 12px;
+    }
+
+
+    .topbar-search input {
+        font-size: 12px;
+    }
+
+
+    .sound-drop-zone strong,
+    .sound-files-only-zone > strong {
+        font-size: 12px;
+    }
+
+
+    .sound-drop-zone > span:not(.drop-zone-icon),
+    .sound-files-only-zone > span:not(.drop-zone-icon) {
+        font-size: 10px;
+    }
+
+
+    .selected-file-copy strong,
+    .location-item strong,
+    .recognition-example code {
+        font-size: 10px;
+    }
+
+
+    .selected-file-copy span,
+    .location-item span,
+    .recognition-example span {
+        font-size: 10px;
+    }
+
+}
+
+
+/* ========================================================================== 
+   GLOBAL TYPOGRAPHY ENFORCEMENT
+   ========================================================================== 
+   PULSEWISE has several feature stylesheets created at different stages of
+   the project. Some of those files still contain local font-family/font-size
+   values. This final layer keeps the project typography authoritative without
+   changing layout, spacing, color, borders or component behavior.
+   ========================================================================== */
+
+html,
+body,
+body *,
+body *::before,
+body *::after,
+button,
+input,
+select,
+textarea,
+option,
+code,
+pre {
+    font-family:
+        Inter,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif !important;
+}
+
+
+/* Shared Patient Record ---------------------------------------------------- */
+
+.pr-breadcrumb {
+    font-size: var(--pw-type-meta) !important;
+}
+
+.pr-eyebrow,
+.pr-clinical-examination-kicker,
+.pr-auscultation-examination-eyebrow {
+    font-size: var(--pw-type-eyebrow) !important;
+}
+
+.pr-page-header h1 {
+    font-size: var(--pw-type-page-title) !important;
+}
+
+.pr-page-header p {
+    font-size: var(--pw-type-page-subtitle) !important;
+}
+
+.pr-section-heading h2,
+.pr-auscultation-legend h2,
+.pr-clinical-examinations-title-row h2,
+.pr-auscultation-examination-title-group h2,
+.pr-inline-location-heading h3 {
+    font-size: var(--pw-type-section-heading) !important;
+}
+
+.pr-clinical-examination-detail-header h3,
+.pr-auscultation-detail-heading h3,
+.pr-inline-finding-heading strong {
+    font-size: var(--pw-type-secondary-heading) !important;
+}
+
+.pr-section-heading p,
+.pr-murmur-locations,
+.pr-clinical-examinations-heading p,
+.pr-auscultation-copy > p {
+    font-size: var(--pw-type-body) !important;
+}
+
+.pr-patient-id-pill,
+.pr-record-count,
+.pr-file-type,
+.pr-outcome-pill,
+.pr-clinical-examinations-count,
+.pr-clinical-examination-status,
+.pr-auscultation-examination-count,
+.pr-inline-location-count,
+.pr-auscultation-view-only-badge {
+    font-size: var(--pw-type-badge) !important;
+}
+
+/* Patient Summary */
+.pr-summary-grid article > div > span {
+    font-size: var(--pw-type-form-label) !important;
+}
+
+.pr-summary-grid article > div > strong {
+    font-size: var(--pw-type-body) !important;
+}
+
+/* Auscultation player/status context */
+.pr-audio-review-context,
+.pr-auscultation-note,
+.pr-legend-list p,
+.pr-auscultation-examination-title-group p,
+.pr-auscultation-detail-heading p,
+.pr-inline-location-heading p,
+.pr-inline-readonly-notice,
+.pr-inline-finding-actions > span {
+    font-size: var(--pw-type-help) !important;
+}
+
+.pr-legend-code,
+.pr-recording-location,
+.pr-valve-audio-meta strong,
+.pr-audio-status-copy strong,
+.pr-auscultation-examination-badge,
+.pr-inline-location-badge {
+    font-size: var(--pw-type-badge) !important;
+}
+
+.pr-valve-audio-meta span,
+.pr-audio-status-copy small,
+.pr-auscultation-examination-navigation strong,
+.pr-auscultation-examination-navigation span,
+.pr-inline-recording-heading div span,
+.pr-inline-finding-heading span,
+.pr-inline-recording-file-info span,
+.pr-inline-autosave-status {
+    font-size: var(--pw-type-meta) !important;
+}
+
+.pr-auscultation-detail-grid dt,
+.pr-auscultation-recording-detail-list dt,
+.pr-auscultation-findings-grid dt,
+.pr-inline-exam-field label {
+    font-size: var(--pw-type-form-label) !important;
+}
+
+.pr-auscultation-detail-grid dd,
+.pr-auscultation-recording-detail-list dd,
+.pr-auscultation-findings-grid dd,
+.pr-inline-exam-field input,
+.pr-inline-exam-field select,
+.pr-inline-exam-field textarea {
+    font-size: var(--pw-type-form-input) !important;
+}
+
+.pr-legend-list strong,
+.pr-auscultation-no-finding strong,
+.pr-inline-recording-heading strong,
+.pr-auscultation-examination-footer > div:first-child strong {
+    font-size: var(--pw-type-table-strong) !important;
+}
+
+.pr-auscultation-no-finding p,
+.pr-auscultation-other-recording-list span,
+.pr-auscultation-other-recording-list strong,
+.pr-auscultation-other-recording-list small,
+.pr-auscultation-examination-footer > div:first-child span {
+    font-size: var(--pw-type-meta) !important;
+}
+
+.pr-auscultation-secondary-button,
+.pr-auscultation-primary-button,
+.pr-clinical-secondary-action,
+.pr-clinical-primary-action,
+.pr-edit-button,
+.pr-add-recording-button {
+    font-size: var(--pw-type-button) !important;
+}
+
+/* Clinical Examinations */
+.pr-clinical-examinations-search input,
+.pr-clinical-examinations-filter {
+    font-size: var(--pw-type-form-input) !important;
+}
+
+.pr-clinical-examination-item-copy strong,
+.pr-clinical-examination-box > header h4,
+.pr-clinical-finding-item > header strong,
+.pr-clinical-outcome strong,
+.pr-clinical-timeline strong {
+    font-size: var(--pw-type-table-strong) !important;
+}
+
+.pr-clinical-examination-item-copy span,
+.pr-clinical-examination-item-copy small,
+.pr-clinical-examinations-no-results,
+.pr-clinical-examination-detail-header p,
+.pr-clinical-timeline small,
+.pr-clinical-examinations-empty p {
+    font-size: var(--pw-type-meta) !important;
+}
+
+.pr-clinical-examination-summary-grid dt,
+.pr-clinical-finding-item dt {
+    font-size: var(--pw-type-form-label) !important;
+}
+
+.pr-clinical-examination-summary-grid dd,
+.pr-clinical-finding-item dd,
+.pr-clinical-notes-box p,
+.pr-clinical-finding-item p,
+.pr-clinical-empty-inline {
+    font-size: var(--pw-type-body) !important;
+}
+
+.pr-clinical-valve-code,
+.pr-clinical-finding-location {
+    font-size: var(--pw-type-badge) !important;
+}
+
+.pr-clinical-valve-card strong {
+    font-size: var(--pw-type-table-strong) !important;
+}
+
+.pr-clinical-valve-card span:not(.pr-clinical-valve-code),
+.pr-clinical-finding-item > header span:not(.pr-clinical-finding-location) {
+    font-size: var(--pw-type-meta) !important;
+}
+
+/* Patient record supporting cards/history */
+.pr-recording-card-header > div > strong,
+.pr-examination-doctor strong,
+.pr-examination-preview strong,
+.pr-doctor-note strong,
+.pr-findings-grid header strong {
+    font-size: var(--pw-type-table-strong) !important;
+}
+
+.pr-recording-card-header > div > span,
+.pr-waveform-preview small,
+.pr-recording-details dt,
+.pr-recording-details dd,
+.pr-recording-footer span,
+.pr-examination-item time,
+.pr-examination-item time small,
+.pr-examination-doctor span,
+.pr-examination-preview span,
+.pr-examination-meta-grid span,
+.pr-examination-meta-grid strong,
+.pr-doctor-note p,
+.pr-findings-grid header div > span,
+.pr-findings-grid dt,
+.pr-findings-grid dd,
+.pr-finding-notes,
+.pr-folder-path,
+.pr-folder-root,
+.pr-folder-child,
+.pr-folder-files span,
+.pr-folder-files small,
+.pr-folder-security {
+    font-size: var(--pw-type-meta) !important;
+}
+
+.pr-empty-recordings p,
+.pr-no-findings,
+.pr-empty-history {
+    font-size: var(--pw-type-help) !important;
+}
+
+.pr-clinical-examinations-empty strong,
+.pr-empty-history strong {
+    font-size: var(--pw-type-secondary-heading) !important;
+}
+
+
+/* ========================================================================== 
+   AUTHENTICATED APPLICATION FALLBACKS
+   ========================================================================== 
+   These are deliberately semantic rather than layout-specific. They cover
+   shared components that may not yet have a dedicated class in the mappings
+   above while preserving the existing visual hierarchy.
+   ========================================================================== */
+
+.app-shell button,
+.app-shell [type="button"],
+.app-shell [type="submit"],
+.app-shell [role="button"] {
+    font-size: var(--pw-type-button) !important;
+}
+
+.app-shell input,
+.app-shell select,
+.app-shell textarea {
+    font-size: var(--pw-type-form-input) !important;
+}
+
+.app-shell label {
+    font-size: var(--pw-type-form-label) !important;
+}
+
+.app-shell small,
+.app-shell time {
+    font-size: var(--pw-type-meta) !important;
+}
+
+

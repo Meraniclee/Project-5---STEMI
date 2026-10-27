@@ -1,0 +1,74 @@
+.report-toolbar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:0 0 20px;padding:16px 20px;border:1px solid #d9e8f3;border-radius:14px;background:#fff}
+.report-export-actions{display:flex;gap:8px;flex-wrap:wrap;margin-left:auto}
+.report-toolbar .stemi-primary-btn.report-secondary-btn{color:#156ba3!important;background:#f0f8ff!important;border:1px solid #bcdcf2;box-shadow:none}
+.report-export-actions button:disabled{opacity:.65;cursor:wait}
+.report-export-hint,.report-export-status{flex-basis:100%;margin:0;font-size:12px;color:#5a6f86;line-height:1.5}
+.report-export-status:empty{display:none}
+.report-export-status{font-weight:600;color:#126b9c}
+.examination-report{background:#fff;border:1px solid #d9e8f3;border-radius:14px;padding:28px;color:#18324b}
+.report-header{display:flex;justify-content:space-between;gap:24px;padding-bottom:20px;border-bottom:2px solid #d4eaf7}
+.report-header h1{margin:4px 0 8px;font-size:27px;color:#0b3153;overflow-wrap:anywhere}
+.report-header p{margin:0;color:#5a6f86}
+.report-kicker{font-size:10px!important;font-weight:700;letter-spacing:1.2px;color:#087db6!important;margin:0 0 6px!important}
+.report-patient-meta{display:grid;grid-template-columns:repeat(2,minmax(100px,1fr));gap:12px 24px;margin:0;min-width:320px}
+.report-patient-meta dt,.report-record-header dt{font-size:11px;color:#58748c;margin-bottom:4px}
+.report-patient-meta dd,.report-record-header dd{font-size:12px;font-weight:600;margin:0}
+.report-explanation{font-size:12px;line-height:1.7;color:#597086;margin:18px 0}
+.report-record-index{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 24px}
+.report-record-index a{display:inline-flex;align-items:center;gap:6px;border:1px solid #cbe3f4;background:#f2f9ff;color:#17689b;padding:8px 12px;border-radius:8px;font-size:12px}
+.report-record{scroll-margin-top:20px;margin-top:24px;border-top:3px solid #148bd0;padding-top:20px}
+.report-record-header{display:flex;align-items:flex-start;justify-content:space-between;gap:24px;margin-bottom:20px}
+.report-record-header h2{font-size:20px;color:#143a59;margin:6px 0;overflow-wrap:anywhere}
+.report-record-header p{font-size:13px;margin:6px 0;color:#3a5d76}
+.report-record-header dl{margin:0;display:grid;grid-template-columns:repeat(3,minmax(95px,1fr));gap:12px 20px;max-width:55%}
+.report-sections{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.report-findings-section{border:1px solid #dae8f1;border-radius:10px;overflow:hidden;align-self:start}
+.report-findings-section h3{font-size:14px;margin:0;padding:0;color:#145b87;background:#eef7fd}
+.report-section-toggle{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;padding:12px 15px;border:0;background:transparent;color:inherit;font:inherit;font-weight:600;text-align:left;cursor:pointer}
+.report-findings-section .report-section-toggle{font-size:inherit!important}
+.report-section-toggle[aria-expanded="true"]{border-bottom:1px solid #dae8f1}
+.report-section-toggle:hover{background:#e1f0fb}
+.report-section-toggle:focus-visible,.report-section-actions button:focus-visible{outline:3px solid #168bd0;outline-offset:-3px}
+.report-section-indicator{display:inline-flex;align-items:center;gap:5px;flex-shrink:0;font-size:11px;font-weight:500;color:#17689b}
+.report-section-actions{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px}
+.report-section-actions button{padding:8px 12px;border:1px solid #bcdcf2;border-radius:7px;background:#f0f8ff;color:#156ba3;font:inherit;font-size:12px;cursor:pointer}
+.examination-report [hidden]{display:none!important}
+.report-wide-section{grid-column:1/-1}
+.report-subtitle{margin:12px 15px 0;color:#516b80;font-size:12px;font-weight:600}
+.report-answers{margin:0;padding:4px 15px 8px}
+.report-answers>div{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:10px;padding:10px 0;border-bottom:1px solid #edf2f6;break-inside:avoid}
+.report-answers>div:last-child{border-bottom:0}
+.report-answers dt{font-size:12px;color:#4a657b;line-height:1.5;font-weight:500;overflow-wrap:anywhere}
+.report-answers dd{font-size:12px;line-height:1.5;margin:0;font-weight:600;white-space:pre-wrap;overflow-wrap:anywhere}
+.report-unanswered dd{font-weight:400;color:#778b9b;font-style:italic}
+.report-wide-section .report-answers>div{grid-template-columns:minmax(190px,.65fr) minmax(0,1.35fr)}
+.report-footer{border-top:1px solid #dce8f1;margin-top:28px;padding-top:14px;font-size:10px;color:#6b8193}
+@media(max-width:1050px){.report-header,.report-record-header{flex-direction:column}.report-record-header dl{max-width:none}.report-export-actions{margin-left:0}}
+@media(max-width:700px){.examination-report{padding:16px}.report-sections{grid-template-columns:1fr}.report-patient-meta{min-width:0;width:100%}.report-record-header dl{grid-template-columns:1fr 1fr}.report-answers>div,.report-wide-section .report-answers>div{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.report-toolbar{padding:12px}.report-export-actions{width:100%}}
+@media print{
+    @page{size:A4;margin:14mm}
+    html,body,.stemi-app,.stemi-main,.stemi-content{background:#fff!important;background-image:none!important;color:#111!important;width:auto!important;min-width:0!important;margin:0!important;padding:0!important;display:block!important}
+    .stemi-sidebar,.app-topbar,.sidebar-overlay,.report-screen-only,.stemi-alert{display:none!important}
+    .app-main{margin-left:0!important}
+    .examination-report{padding:0!important;border:0!important;border-radius:0!important;box-shadow:none!important}
+    .report-header{display:block;break-inside:avoid;padding-bottom:10px}
+    .report-header h1{font-size:21px}
+    .report-patient-meta{margin-top:12px;grid-template-columns:repeat(4,minmax(0,1fr));min-width:0;gap:12px}
+    .report-record{break-before:page;border-top:2px solid #1686bd;padding-top:12px}
+    .report-record:first-of-type{break-before:auto}
+    .report-record-header{display:block;break-inside:avoid;margin-bottom:15px}
+    .report-record-header h2{font-size:18px}
+    .report-record-header dl{max-width:none;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:12px}
+    .report-sections{display:block}
+    .report-findings-section{margin-bottom:14px;break-inside:auto;border-radius:0;overflow:visible}
+    .report-lead-section{break-inside:avoid}
+    .report-findings-section h3{break-after:avoid;font-size:12px;padding:0}
+    .report-section-toggle{padding:8px 12px;border-bottom:1px solid #dae8f1!important;cursor:default}
+    .examination-report .report-section-content[hidden]{display:block!important}
+    .report-answers{padding:0 12px 4px}
+    .report-answers>div{padding:5px 0;break-inside:avoid}
+    .report-answers dt,.report-answers dd{font-size:10px;line-height:1.35}
+    .report-explanation{font-size:10px}
+    .report-footer{font-size:9px}
+    a{color:inherit!important;text-decoration:none!important}
+}

@@ -1,0 +1,443 @@
+/* ============================================================================
+   PULSEWISE / HeartScope
+   Hierarchical Sidebar Navigation
+
+   Purpose:
+   - Preserve the existing PULSEWISE sidebar theme.
+   - Add professional parent -> child route hierarchy.
+   - Add contextual subpages only when a valid entity exists.
+   ============================================================================ */
+
+
+/* ========================================================================== 
+   GROUP / PARENT ROW
+   ========================================================================== */
+
+.sidebar-tree-group {
+    display: grid;
+    gap: 2px;
+
+    min-width: 0;
+}
+
+
+.sidebar-tree-parent {
+    position: relative;
+
+    min-width: 0;
+
+    display: flex;
+    align-items: stretch;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        transparent;
+
+    border-radius: 10px;
+
+    transition:
+        background 150ms ease,
+        border-color 150ms ease,
+        box-shadow 150ms ease,
+        transform 150ms ease;
+}
+
+
+.sidebar-tree-parent:hover {
+    border-color:
+        rgba(94, 180, 229, 0.24);
+
+    background:
+        rgba(255, 255, 255, 0.56);
+
+    transform:
+        translateX(2px);
+}
+
+
+.sidebar-tree-parent-link {
+    flex: 1 1 auto;
+    min-width: 0;
+
+    margin: 0 !important;
+
+    border: 0 !important;
+    border-radius: 0 !important;
+
+    background: transparent !important;
+
+    box-shadow: none !important;
+
+    transform: none !important;
+}
+
+
+.sidebar-tree-parent-link::before,
+.sidebar-tree-parent-link::after {
+    display: none !important;
+}
+
+
+.sidebar-tree-group.is-active
+.sidebar-tree-parent {
+    color: #ffffff;
+
+    border-color:
+        rgba(7, 140, 240, 0.30);
+
+    background:
+        linear-gradient(
+            100deg,
+            #0783df,
+            #079fec
+        );
+
+    box-shadow:
+        0 8px 18px
+        rgba(7, 128, 209, 0.17);
+}
+
+
+.sidebar-tree-group.is-active
+.sidebar-tree-parent::before {
+    content: "";
+
+    position: absolute;
+    z-index: 2;
+
+    width: 3px;
+
+    left: 0;
+    top: 8px;
+    bottom: 8px;
+
+    border-radius:
+        0 99px 99px 0;
+
+    background:
+        #c7f4ff;
+}
+
+
+.sidebar-tree-group.is-active
+.sidebar-tree-parent-link,
+.sidebar-tree-group.is-active
+.sidebar-tree-parent-link:hover {
+    color: #ffffff !important;
+}
+
+
+/* ========================================================================== 
+   EXPAND / COLLAPSE BUTTON
+   ========================================================================== */
+
+.sidebar-tree-toggle {
+    width: 38px;
+    min-width: 38px;
+
+    display: grid;
+    place-items: center;
+
+    align-self: stretch;
+
+    padding: 0;
+
+    border: 0;
+
+    color:
+        #6c879b;
+
+    background:
+        transparent;
+
+    cursor:
+        pointer;
+}
+
+
+.sidebar-tree-toggle:hover {
+    color:
+        #0874d0;
+
+    background:
+        rgba(255, 255, 255, 0.34);
+}
+
+
+.sidebar-tree-toggle:focus-visible {
+    outline:
+        2px solid
+        #078cf0;
+
+    outline-offset:
+        -3px;
+}
+
+
+.sidebar-tree-group.is-active
+.sidebar-tree-toggle {
+    color:
+        #ffffff;
+}
+
+
+.sidebar-tree-group.is-active
+.sidebar-tree-toggle:hover {
+    background:
+        rgba(255, 255, 255, 0.11);
+}
+
+
+.sidebar-tree-toggle svg {
+    width: 16px;
+    height: 16px;
+
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+
+    transition:
+        transform 170ms ease;
+}
+
+
+.sidebar-tree-group.is-open
+.sidebar-tree-toggle svg,
+.sidebar-tree-toggle[aria-expanded="true"] svg {
+    transform:
+        rotate(180deg);
+}
+
+
+/* ========================================================================== 
+   CHILD NAVIGATION
+   ========================================================================== */
+
+.sidebar-subnavigation {
+    position: relative;
+
+    min-width: 0;
+
+    display: grid;
+    gap: 3px;
+
+    margin:
+        1px 0
+        3px 24px;
+
+    padding:
+        4px 0
+        5px 22px;
+}
+
+
+.sidebar-subnavigation[hidden] {
+    display: none !important;
+}
+
+
+.sidebar-subnavigation::before {
+    content: "";
+
+    position: absolute;
+
+    width: 1px;
+
+    left: 6px;
+    top: 1px;
+    bottom: 2px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(110, 184, 224, 0.28),
+            rgba(89, 166, 210, 0.72),
+            rgba(110, 184, 224, 0.25)
+        );
+}
+
+
+.sidebar-sub-link {
+    position: relative;
+
+    min-width: 0;
+    min-height: 34px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    padding:
+        6px 10px;
+
+    border:
+        1px solid
+        transparent;
+
+    border-radius:
+        8px;
+
+    color:
+        #5b7890;
+
+    background:
+        transparent;
+
+    font-size: 11px;
+    font-weight: 650;
+    line-height: 1.25;
+
+    transition:
+        color 140ms ease,
+        background 140ms ease,
+        border-color 140ms ease,
+        transform 140ms ease;
+}
+
+
+.sidebar-sub-link::before {
+    content: "";
+
+    position: absolute;
+
+    width: 14px;
+    height: 1px;
+
+    left: -16px;
+    top: 50%;
+
+    background:
+        #abd6eb;
+
+    transform:
+        translateY(-50%);
+}
+
+
+.sidebar-sub-link:hover {
+    color:
+        #0874c7;
+
+    border-color:
+        rgba(127, 194, 230, 0.20);
+
+    background:
+        rgba(255, 255, 255, 0.52);
+
+    transform:
+        translateX(2px);
+}
+
+
+.sidebar-sub-link.active {
+    color:
+        #0874d0;
+
+    border-color:
+        rgba(105, 188, 232, 0.19);
+
+    background:
+        rgba(255, 255, 255, 0.58);
+
+    box-shadow:
+        0 4px 13px
+        rgba(35, 103, 149, 0.045);
+
+    font-weight:
+        750;
+}
+
+
+.sidebar-sub-dot {
+    position: relative;
+    z-index: 2;
+
+    width: 7px;
+    height: 7px;
+
+    flex:
+        0 0 7px;
+
+    border:
+        1.5px solid
+        #7bbce0;
+
+    border-radius:
+        50%;
+
+    background:
+        #edf9ff;
+
+    transition:
+        border-color 140ms ease,
+        background 140ms ease,
+        box-shadow 140ms ease;
+}
+
+
+.sidebar-sub-link.active
+.sidebar-sub-dot {
+    border-color:
+        #078cf0;
+
+    background:
+        #078cf0;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(7, 140, 240, 0.08);
+}
+
+
+/* ========================================================================== 
+   ACCESSIBILITY / REDUCED MOTION
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    .sidebar-tree-parent,
+    .sidebar-tree-toggle svg,
+    .sidebar-sub-link,
+    .sidebar-sub-dot {
+        transition-duration:
+            0.01ms !important;
+    }
+}
+
+
+/* ========================================================================== 
+   MOBILE
+   ========================================================================== */
+
+@media (max-width: 900px) {
+    .sidebar-tree-toggle {
+        width: 42px;
+        min-width: 42px;
+    }
+
+
+    .sidebar-subnavigation {
+        margin-left:
+            25px;
+
+        padding-left:
+            23px;
+    }
+
+
+    .sidebar-sub-link {
+        min-height:
+            37px;
+
+        padding:
+            7px 10px;
+
+        font-size:
+            11px;
+    }
+}

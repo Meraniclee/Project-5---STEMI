@@ -1,0 +1,490 @@
+.doctor-review-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 30px 0 18px;
+}
+
+.doctor-review-header h1 {
+    margin: 3px 0 0;
+    color: #061f39;
+    font-size: 27px;
+    font-weight: 700;
+    letter-spacing: -0.7px;
+}
+
+.doctor-review-header p {
+    margin: 7px 0 0;
+    color: #687d91;
+    font-size: 13px;
+}
+
+.doctor-review-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-bottom: 7px;
+    color: #7990a3;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.doctor-review-breadcrumb a {
+    color: #0879b9;
+    text-decoration: none;
+}
+
+.doctor-review-breadcrumb strong {
+    color: #36546d;
+}
+
+.doctor-review-edit {
+    text-decoration: none;
+}
+
+.doctor-profile-card {
+    display: grid;
+    grid-template-columns: minmax(260px, 0.85fr) minmax(0, 1.65fr);
+    gap: 22px;
+    align-items: center;
+    padding: 18px;
+    margin-bottom: 14px;
+    border: 1px solid #dce9f2;
+    border-radius: 14px;
+    background: #ffffff;
+    box-shadow: 0 8px 28px rgba(31, 79, 116, 0.06);
+}
+
+.doctor-profile-identity {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.doctor-profile-avatar {
+    width: 54px;
+    height: 54px;
+    flex: 0 0 54px;
+    display: grid;
+    place-items: center;
+    border-radius: 15px;
+    color: #0879b9;
+    background: #e7f6fd;
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.doctor-profile-kicker {
+    display: block;
+    margin-bottom: 3px;
+    color: #0a84c4;
+    font-size: 10px;
+    font-weight: 750;
+    letter-spacing: 0.08em;
+}
+
+.doctor-profile-identity h2 {
+    margin: 0;
+    color: #082b4d;
+    font-size: 18px;
+    font-weight: 750;
+}
+
+.doctor-profile-identity p {
+    margin: 4px 0 0;
+    color: #6b8092;
+    font-size: 11px;
+}
+
+.doctor-profile-meta {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px;
+    margin: 0;
+}
+
+.doctor-profile-meta div {
+    min-width: 0;
+    padding: 11px 12px;
+    border: 1px solid #e0ebf2;
+    border-radius: 10px;
+    background: #f9fcfe;
+}
+
+.doctor-profile-meta dt {
+    color: #7b8f9f;
+    font-size: 10px;
+}
+
+.doctor-profile-meta dd {
+    margin: 4px 0 0;
+    overflow-wrap: anywhere;
+    color: #173b57;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.doctor-review-stat-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.doctor-review-stat-card {
+    padding: 15px 16px;
+    border: 1px solid #dce9f2;
+    border-radius: 13px;
+    background: #ffffff;
+    box-shadow: 0 8px 24px rgba(31, 79, 116, 0.05);
+}
+
+.doctor-review-stat-card span {
+    display: block;
+    color: #6e8395;
+    font-size: 11px;
+    font-weight: 650;
+}
+
+.doctor-review-stat-card strong {
+    display: block;
+    margin-top: 4px;
+    color: #071f38;
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.doctor-review-stat-card small {
+    display: block;
+    margin-top: 2px;
+    color: #8a9aa7;
+    font-size: 10px;
+}
+
+.doctor-patient-filter-form {
+    display: grid;
+    grid-template-columns: minmax(260px, 1fr) 160px auto auto;
+    gap: 9px;
+    margin-bottom: 15px;
+}
+
+.doctor-patient-filter-form select {
+    min-height: 42px;
+    padding: 0 11px;
+    border: 1px solid #d5e5ef;
+    border-radius: 9px;
+    color: #28465f;
+    background: #ffffff;
+    font-size: 12px;
+}
+
+.doctor-patient-table {
+    min-width: 950px;
+}
+
+.doctor-patient-id {
+    color: #075f94;
+    font-size: 11px;
+}
+
+.doctor-patient-count-badge {
+    min-width: 27px;
+    height: 27px;
+    display: inline-grid;
+    place-items: center;
+    padding: 0 7px;
+    border-radius: 999px;
+    color: #0879b9;
+    background: #e8f6fd;
+    font-size: 9px;
+    font-weight: 800;
+}
+
+.doctor-patient-status {
+    display: inline-flex;
+    align-items: center;
+    min-height: 24px;
+    padding: 0 9px;
+    border-radius: 999px;
+    color: #586f82;
+    background: #eef3f6;
+    font-size: 9px;
+    font-weight: 750;
+}
+
+.doctor-patient-status.status-in-progress {
+    color: #0879b9;
+    background: #e4f5fd;
+}
+
+.doctor-patient-status.status-completed {
+    color: #087b56;
+    background: #e0f7ec;
+}
+
+.doctor-patient-status.status-needs-review {
+    color: #9a6813;
+    background: #fff5dc;
+}
+
+.doctor-patient-status.status-pending {
+    color: #6b6e9f;
+    background: #f0effd;
+}
+
+.doctor-patient-empty {
+    padding: 34px !important;
+    text-align: center;
+    color: #8092a1 !important;
+}
+
+.doctor-patient-pagination {
+    margin-top: 14px;
+}
+
+@media (max-width: 1100px) {
+    .doctor-profile-card {
+        grid-template-columns: 1fr;
+    }
+
+    .doctor-profile-meta {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .doctor-review-stat-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 760px) {
+    .doctor-review-header {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .doctor-review-edit {
+        width: 100%;
+    }
+
+    .doctor-patient-filter-form {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 560px) {
+
+    /*
+     * Doctor profile — compact mobile information map.
+     * Email and Last Login span the card; Status and Phone share one row.
+     */
+    .doctor-profile-card {
+        gap: 14px;
+
+        padding: 14px;
+    }
+
+
+    .doctor-profile-meta {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 7px;
+    }
+
+
+    .doctor-profile-meta > div {
+        padding: 9px 10px;
+    }
+
+
+    /* Email */
+    .doctor-profile-meta > div:nth-child(1) {
+        grid-column: 1 / -1;
+        grid-row: 1;
+    }
+
+
+    /* Phone */
+    .doctor-profile-meta > div:nth-child(2) {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+
+    /* Status */
+    .doctor-profile-meta > div:nth-child(3) {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+
+    /* Last Login */
+    .doctor-profile-meta > div:nth-child(4) {
+        grid-column: 1 / -1;
+        grid-row: 3;
+    }
+
+
+    /*
+     * Four examination KPI cards stay in a compact 2 × 2 layout.
+     */
+    .doctor-review-stat-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 8px;
+    }
+
+
+    .doctor-review-stat-card {
+        min-width: 0;
+
+        min-height: 100px;
+
+        padding: 12px;
+    }
+
+
+    .doctor-review-stat-card span {
+        line-height: 1.25;
+    }
+
+
+    .doctor-review-stat-card strong {
+        margin-top: 3px;
+
+        font-size: 22px;
+    }
+
+
+    .doctor-review-stat-card small {
+        margin-top: 3px;
+
+        line-height: 1.3;
+    }
+}
+
+
+/* --------------------------------------------------------------------------
+   Mobile Managed Patients
+-------------------------------------------------------------------------- */
+
+.doctor-patient-mobile-list {
+    margin-top: 0;
+}
+
+.doctor-patient-mobile-card {
+    min-width: 0;
+}
+
+.doctor-patient-mobile-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.doctor-patient-mobile-kicker {
+    display: block;
+    margin-bottom: 3px;
+    color: #7f93a4;
+    font-size: 9px;
+    font-weight: 750;
+    letter-spacing: 0.06em;
+}
+
+.doctor-patient-mobile-heading strong {
+    display: block;
+    color: #075f94;
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.doctor-patient-mobile-details {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    margin: 14px 0 0;
+    padding-top: 13px;
+    border-top: 1px solid #e5edf3;
+}
+
+.doctor-patient-mobile-details div {
+    min-width: 0;
+}
+
+.doctor-patient-mobile-details dt {
+    color: #8193a3;
+    font-size: 9px;
+}
+
+.doctor-patient-mobile-details dd {
+    margin: 4px 0 0;
+    color: #38546d;
+    font-size: 10px;
+    font-weight: 650;
+    overflow-wrap: anywhere;
+}
+
+.doctor-patient-mobile-detail-wide {
+    grid-column: 1 / -1;
+}
+
+.doctor-patient-mobile-view {
+    width: 100%;
+    min-height: 40px;
+    margin-top: 14px;
+}
+
+@media (max-width: 760px) {
+    .doctor-patients-panel {
+        padding: 14px;
+    }
+
+    .doctor-patient-mobile-list {
+        display: grid;
+        gap: 10px;
+    }
+
+    .doctor-patient-pagination {
+        margin-top: 12px;
+    }
+}
+
+@media (max-width: 420px) {
+
+    /*
+     * Managed patient cards remain two columns even on narrow phones:
+     * Age Group | Sex
+     * Recordings | Doctor Exams
+     * Last Examined (full width)
+     */
+    .doctor-patient-mobile-card {
+        padding: 12px;
+    }
+
+
+    .doctor-patient-mobile-details {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 8px 10px;
+
+        margin-top: 11px;
+
+        padding-top: 10px;
+    }
+
+
+    .doctor-patient-mobile-detail-wide {
+        grid-column: 1 / -1;
+    }
+
+
+    .doctor-patient-mobile-view {
+        min-height: 36px;
+
+        margin-top: 11px;
+    }
+}

@@ -1,0 +1,295 @@
+:root {
+    --ink: #101f45;
+    --blue: #0781ee
+}
+
+* {
+    box-sizing: border-box
+}
+
+body {
+    margin: 0;
+    font-family: Inter,'Segoe UI',Arial,sans-serif;
+    color: var(--ink);
+    background: linear-gradient(160deg,#f9fdff,#eaf7ff);
+    min-height: 100vh
+}
+
+a {
+    text-decoration: none;
+    color: inherit
+}
+
+.public-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 17px max(25px,5vw);
+    height: 76px;
+    background: rgba(255,255,255,.95);
+    border-bottom: 1px solid #daeaf6
+}
+
+.public-brand {
+    display: flex;
+    align-items: center;
+    font-size: 25px;
+    font-weight: 850;
+    letter-spacing: -.055em
+}
+
+.public-brand>span:first-child {
+    font-size: 34px;
+    color: #0a8af2;
+    margin-right: 8px
+}
+
+.brand-dot {
+    color: #008ff5
+}
+
+.public-login {
+    font-size: 13px;
+    color: #1876d3;
+    font-weight: 700
+}
+
+.public-hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    min-height: 530px;
+    padding: 75px max(25px,7vw);
+    background: linear-gradient(110deg,rgba(237,248,255,.96),rgba(207,235,255,.72)),url('../images/Futuristic Cardiology Waveform Background.png') center/cover
+}
+
+.public-hero-inner {
+    max-width: 700px
+}
+
+.public-label {
+    display: inline-block;
+    border: 1px solid #b5def8;
+    background: #e8f6ff;
+    color: #0877db;
+    border-radius: 99px;
+    padding: 8px 15px;
+    font-size: 11px;
+    letter-spacing: .07em;
+    font-weight: 800
+}
+
+.public-hero h1, .public-auth-copy h1 {
+    font-size: clamp(36px,5vw,65px);
+    line-height: 1.07;
+    letter-spacing: -.055em;
+    max-width: 790px;
+    margin: 25px 0;
+    color: #061c3a
+}
+
+.public-hero h1 span, .public-auth-copy h1 span {
+    color: #0785f1
+}
+
+.public-hero p, .public-auth-copy p {
+    color: #496d90;
+    line-height: 1.75;
+    font-size: 17px;
+    max-width: 550px
+}
+
+.public-hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 27px
+}
+
+.public-hero-actions span {
+    font-size: 12px;
+    color: #6282a2
+}
+
+.public-cta {
+    display: inline-block;
+    padding: 14px 22px;
+    background: linear-gradient(105deg,#0e9af5,#046af0);
+    border: 0;
+    border-radius: 9px;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 0 8px 17px #157dd22e
+}
+
+.public-wave {
+    width: 38%;
+    min-width: 220px;
+    max-width: 480px;
+    color: #068beb;
+    filter: drop-shadow(0 8px 20px #168cd747)
+}
+
+.public-wave svg {
+    width: 100%
+}
+
+.public-features {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 42px 28px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 16px
+}
+
+.public-features article {
+    background: #fff;
+    border: 1px solid #cce5f6;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 8px 22px #25648a12
+}
+
+.public-features article>span {
+    font-size: 29px;
+    color: #0b92f6
+}
+
+.public-features h2 {
+    font-size: 18px;
+    color: #1b3354
+}
+
+.public-features p {
+    font-size: 13px;
+    color: #65809b;
+    line-height: 1.7
+}
+
+.public-footer {
+    text-align: center;
+    color: #7990a9;
+    font-size: 11px;
+    padding: 25px
+}
+
+.public-auth-shell {
+    display: grid;
+    grid-template-columns: minmax(300px,1.1fr) minmax(300px,450px);
+    gap: 8vw;
+    align-items: center;
+    padding: 80px max(25px,8vw);
+    min-height: calc(100vh - 142px);
+    background: linear-gradient(105deg,rgba(231,246,255,.98),rgba(245,252,255,.92)),url('../images/Futuristic Cardiology Waveform Background.png') center/cover
+}
+
+.public-auth-copy {
+    position: relative
+}
+
+.public-auth-copy h1 {
+    font-size: clamp(37px,4.8vw,62px)
+}
+
+.public-auth-decor {
+    font-size: 160px;
+    color: #078bf2;
+    line-height: 1;
+    margin-top: 30px;
+    opacity: .3
+}
+
+.public-auth-card {
+    background: #fff;
+    border: 1px solid #cce5f8;
+    border-radius: 18px;
+    padding: 34px;
+    box-shadow: 0 20px 55px #16548320
+}
+
+.public-auth-icon {
+    height: 54px;
+    width: 54px;
+    display: grid;
+    place-items: center;
+    background: #dff2ff;
+    color: #048afa;
+    border-radius: 13px;
+    font-size: 33px
+}
+
+.public-auth-card h2 {
+    font-size: 24px;
+    letter-spacing: -.03em;
+    margin: 20px 0 7px
+}
+
+.public-auth-card p {
+    font-size: 13px;
+    color: #6c839d;
+    margin-bottom: 25px;
+    line-height: 1.6
+}
+
+.public-auth-card label {
+    display: block;
+    font-size: 12px;
+    font-weight: 750;
+    margin: 15px 0 7px
+}
+
+.public-auth-card input {
+    display: block;
+    width: 100%;
+    border: 1px solid #c6dced;
+    border-radius: 8px;
+    font-size: 14px;
+    padding: 13px;
+    outline-color: #0584f5
+}
+
+.public-auth-card button {
+    width: 100%;
+    margin: 22px 0 12px
+}
+
+.public-auth-card small {
+    display: block;
+    text-align: center;
+    font-size: 11px;
+    color: #8b9fb3
+}
+
+.public-error {
+    background: #fff0ef;
+    border: 1px solid #f4bcb7;
+    color: #a63730;
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 12px
+}
+
+@media (max-width: 760px) {
+    .public-hero, .public-auth-shell {
+        display: block;
+        padding: 58px 26px
+    }
+    .public-wave {
+        margin: 35px auto;
+        width: 90%
+    }
+    .public-features {
+        grid-template-columns: 1fr
+    }
+    .public-auth-card {
+        margin-top: 35px
+    }
+    .public-auth-decor {
+        display: none
+    }
+}

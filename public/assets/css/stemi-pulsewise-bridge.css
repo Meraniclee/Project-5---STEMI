@@ -1,0 +1,265 @@
+/*
+ * Stemi integration for the original Project 4 PULSEWISE visual system.
+ * Only Stemi-scoped components are adjusted; clinical views and actions
+ * remain in their existing Blade/JS/controllers.
+ * Cascade: base -> page CSS -> stemi-dashboard -> Project 4 theme/tree
+ *          -> this bridge -> typography.
+ */
+:root {
+    --sidebar-width: 270px;
+    --stemi-blue: #078cf0;
+    --stemi-deep: #061c3b;
+    --stemi-line: #dce9f2;
+    --stemi-ink: #102b48;
+    --stemi-sub: #6c8195;
+    --stemi-cyan: #22cfe9;
+    --stemi-shadow: 0 12px 34px rgba(14, 65, 103, 0.065);
+}
+
+/* The desktop surface and fixed wallpaper match Project 4. */
+.stemi-app {
+    grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
+}
+.stemi-app .stemi-main {
+    background-image:
+        linear-gradient(180deg, rgba(245,251,255,.64) 0%, rgba(243,249,255,.70) 48%, rgba(246,251,255,.76) 100%),
+        url('../images/Futuristic%20Cardiology%20Waveform%20Background.png');
+    background-size: cover, cover;
+    background-position: center top, center center;
+    background-repeat: no-repeat, no-repeat;
+    background-attachment: fixed, fixed;
+    background-color: #f5fbff;
+}
+
+/* 270px gradient sidebar, including Stemi's existing navigation. */
+.stemi-app .stemi-sidebar {
+    width: var(--sidebar-width);
+    padding: 20px 14px 18px;
+    border-right: 1px solid #b9ddf1;
+    background:
+        radial-gradient(circle at 45% -5%, rgba(255,255,255,.94), transparent 27%),
+        linear-gradient(180deg, #eef9ff 0%, #e3f5ff 45%, #d9effd 100%);
+    box-shadow: 7px 0 28px rgba(26,102,155,.07);
+}
+.stemi-logo {
+    min-height: 84px;
+    padding: 6px 7px 13px;
+    gap: 10px;
+}
+.stemi-logo-icon { width: 48px; height: 45px; }
+.stemi-role {
+    margin: 10px 6px 18px;
+    border-color: #dce9f2;
+    background: rgba(255,255,255,.74);
+}
+.stemi-nav { gap: 5px; }
+.stemi-nav-link {
+    position: relative;
+    min-height: 47px;
+    padding: 10px 14px;
+    border-radius: 10px;
+    transition: background 150ms ease, color 150ms ease, transform 150ms ease;
+}
+.stemi-nav-link:hover {
+    background: rgba(255,255,255,.56);
+    color: #0874d0;
+    transform: translateX(2px);
+}
+.stemi-nav-link.active {
+    background: linear-gradient(100deg, #0783df, #079fec);
+    color: #fff;
+    box-shadow: 0 7px 18px rgba(7,128,199,.14);
+}
+.stemi-nav-link.active::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 14px;
+    bottom: 14px;
+    width: 3px;
+    border-radius: 0 3px 3px 0;
+    background: #a0f0ff;
+}
+.stemi-nav-link.active::after {
+    content: '';
+    position: absolute;
+    right: 11px;
+    top: 50%;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: rgba(255,255,255,.86);
+    transform: translateY(-50%);
+}
+.stemi-nav-sub { border-color: #92c9e6; }
+.stemi-nav-sub a.selected, .stemi-nav-sub span.selected {
+    background: rgba(255,255,255,.82);
+    color: #0874d0;
+}
+.stemi-school {
+    background: rgba(255,255,255,.90);
+    border-color: #dce9f2;
+    box-shadow: 0 10px 28px rgba(26,70,103,.055);
+}
+
+/* Project 4 transparent/blurred topbar, with Stemi search and profile. */
+.stemi-app .stemi-topbar {
+    min-height: 74px;
+    padding: 12px clamp(20px, 2.8vw, 38px);
+    gap: 16px;
+    background: rgba(255,255,255,.78) !important;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(216,232,242,.90);
+    border-radius: 12px;
+    box-shadow: 0 7px 24px rgba(27,74,108,.035);
+}
+.stemi-menu-button {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    border-color: #dce9f2;
+    background: rgba(255,255,255,.92);
+    box-shadow: 0 4px 14px rgba(26,70,103,.07);
+}
+.stemi-menu-button:hover, .stemi-menu-button:focus-visible {
+    color: #0874d0;
+    border-color: #bce8fb;
+    background: #eef8fe;
+}
+.stemi-top-search {
+    max-width: 560px;
+    width: min(47vw, 560px);
+    min-height: 45px;
+    height: 45px;
+    background: #f9fcfe;
+    border: 1px solid #dbe9f2;
+    border-radius: 11px;
+    box-shadow: none;
+    transition: box-shadow 150ms ease, border-color 150ms ease;
+}
+.stemi-top-search:focus-within {
+    border-color: #72bfe9;
+    box-shadow: 0 0 0 4px rgba(7,140,240,.07);
+}
+.stemi-avatar { background: linear-gradient(135deg, #15a7ed, #078cf0); }
+.stemi-profile-button { border-radius: 10px; padding: 4px 6px; }
+.stemi-profile-button:hover { background: rgba(255,255,255,.65); }
+.stemi-dropdown { box-shadow: 0 16px 38px rgba(14,65,103,.14); }
+
+/* Page banners, panels, statistics and tables match Project 4 tokens. */
+.stemi-app .stemi-content { padding: 10px clamp(12px, 1.7vw, 24px) 34px !important; }
+.stemi-page-banner {
+    border-radius: 0 0 18px 18px;
+    border-color: #dce9f2;
+    background: transparent;
+    box-shadow: var(--stemi-shadow);
+}
+.stemi-crumb { color: #486178; }
+.stemi-crumb a { color: #0874d0; }
+.stemi-eyebrow { color: #0874d0; }
+.stemi-page-banner h1 { color: #061c3b; }
+.stemi-page-banner p { color: #6c8195; }
+.stemi-kpi {
+    min-height: 108px;
+    padding: 18px;
+    border-radius: 14px;
+    border-color: #dce9f2;
+    background: rgba(255,255,255,.98);
+    box-shadow: 0 9px 25px rgba(23,67,101,.055);
+    transition: transform 150ms ease, box-shadow 150ms ease;
+}
+.stemi-kpi:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px rgba(23,67,101,.10);
+}
+.stemi-card {
+    border: 1px solid #dce9f2;
+    border-radius: 15px;
+    background: rgba(255,255,255,.99);
+    box-shadow: 0 10px 28px rgba(26,70,103,.055);
+}
+.stemi-section-icon { background: linear-gradient(135deg, #15a7ed, #078cf0); }
+.stemi-card-heading h2 { color: #102b48; }
+.stemi-card-heading p { color: #6c8195; }
+.stemi-table-scroll { border: 1px solid #e1ebf2; border-radius: 11px; }
+.stemi-table th {
+    background: #f5f9fc;
+    color: #486178;
+    letter-spacing: .035em;
+    text-transform: uppercase;
+}
+.stemi-table tbody tr:hover { background: #f8fcff; }
+.stemi-table td { border-color: #e1ebf2; }
+.stemi-primary-btn {
+    background: linear-gradient(120deg, #0875cf, #069fe0);
+    color: #fff;
+    border-radius: 9px;
+    box-shadow: 0 7px 15px rgba(7,128,199,.13);
+    transition: transform 150ms ease, box-shadow 150ms ease;
+}
+.stemi-primary-btn:hover { transform: translateY(-1px); box-shadow: 0 10px 19px rgba(7,128,199,.20); }
+.stemi-pill { border-radius: 999px; }
+.stemi-pill.completed { background: #dff8eb; color: #10a979; }
+.stemi-pill.pending { background: #fff5e3; color: #bc7b14; }
+.stemi-pill.needs_review { background: #fff0e1; color: #bc661f; }
+.stemi-finding-form select:focus-visible,
+.stemi-finding-form textarea:focus-visible,
+.stemi-upload-form input:focus-visible,
+.stemi-upload-form select:focus-visible,
+.stemi-filter input:focus-visible {
+    border-color: #72bfe9;
+    box-shadow: 0 0 0 4px rgba(7,140,240,.07);
+    outline: none;
+}
+.stemi-ecg-preview, .stemi-ecg-info, .stemi-ecg-thumbnails {
+    border-color: #dce9f2;
+}
+
+/* Tablet / mobile keep the working Stemi drawer behavior and portrait art. */
+@media (max-width: 1024px) {
+    .stemi-page-banner { min-height: 120px; }
+}
+@media (max-width: 900px) {
+    .stemi-app .stemi-sidebar {
+        width: min(290px, 86vw);
+        height: 100dvh;
+        min-height: 0;
+    }
+    .stemi-app .stemi-main {
+        background-image:
+            linear-gradient(180deg, rgba(245,251,255,.48) 0%, rgba(244,250,255,.54) 52%, rgba(246,251,255,.60) 100%),
+            url('../images/cardiac-auscultation-map-mobile.png');
+        background-size: 100vw 100vh, 100vw 100vh;
+        background-position: center center, center center;
+        background-repeat: no-repeat, no-repeat;
+        background-attachment: fixed, fixed;
+    }
+    .stemi-app .stemi-topbar {
+        min-height: 68px;
+        padding: 10px 16px;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+    .stemi-app .stemi-content { padding: 12px 17px 34px !important; }
+    .stemi-top-search { max-width: none; width: 100%; }
+}
+@media (max-width: 720px) {
+    .stemi-page-banner h1 { font-size: 22px; }
+}
+@media (max-width: 650px) {
+    .stemi-app .stemi-content { padding: 10px !important; }
+    .stemi-app .stemi-topbar { padding: 8px; gap: 8px; }
+    .stemi-top-search { padding: 0 8px; }
+    .stemi-page-banner { padding: 16px; }
+    .stemi-kpi { padding: 13px; }
+}
+@media (max-width: 420px) {
+    .stemi-top-search button { display: none; }
+    .stemi-logo { gap: 7px; }
+    .stemi-page-banner h1 { overflow-wrap: anywhere; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .stemi-kpi, .stemi-nav-link, .stemi-primary-btn { transition: none; }
+    .stemi-kpi:hover, .stemi-nav-link:hover, .stemi-primary-btn:hover { transform: none; }
+}

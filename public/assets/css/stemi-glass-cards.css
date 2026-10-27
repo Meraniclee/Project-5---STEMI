@@ -1,0 +1,58 @@
+/* Shared screen-only card finish. Backdrop blur keeps text and ECG images sharp. */
+@media screen {
+    :is(
+        .stemi-card,
+        .stemi-kpi,
+        .stemi-patient-kpis > div,
+        .stemi-page-banner,
+        .stemi-topbar,
+        .stemi-role,
+        .stemi-school,
+        .stat-card,
+        .dashboard-panel,
+        .management-stat-card,
+        .management-panel,
+        .management-mobile-card,
+        .user-form-card,
+        .user-form-side-card,
+        .doctor-profile-card,
+        .doctor-review-stat-card,
+        .doctor-patient-mobile-card,
+        .stemi-ecg-thumbnails,
+        .stemi-ecg-preview,
+        .stemi-ecg-info,
+        .stemi-upload-columns > div,
+        .stemi-file-area,
+        .annotation-history,
+        .annotation-crop-editor,
+        .annotation-lead-detail,
+        .annotation-lead,
+        .report-toolbar,
+        .examination-report,
+        .report-findings-section,
+        .sp-login-panel,
+        .sp-feature,
+        .stemi-homepage .sp-home-feature-bar,
+        .stemi-homepage .sp-home-join
+    ) {
+        background: transparent !important;
+        -webkit-backdrop-filter: blur(2px) !important;
+        backdrop-filter: blur(3px) !important;
+    }
+
+    /* Header fills must not mask the transparent report cards. */
+    .report-findings-section h3 {
+        background: transparent;
+    }
+    .report-section-toggle:hover {
+        background: rgba(226, 242, 255, .36);
+    }
+
+    /* Retain the meaning of examination progress using transparent colour tints. */
+    .annotation-lead.lead-finished {
+        background: rgba(173, 225, 190, .48) !important;
+    }
+    .annotation-lead.lead-unfinished {
+        background: rgba(255, 200, 200, .45) !important;
+    }
+}

@@ -1,0 +1,1618 @@
+/\* STEMI — Unified clinical dashboard design for all three roles. \*/
+
+:root {
+    --sidebar-width: 242px;
+    --stemi-blue: #077af5;
+    --stemi-deep: #07153b;
+    --stemi-line: #cfe4f6;
+    --stemi-ink: #0d1b41;
+    --stemi-sub: #466996;
+    --stemi-cyan: #00bced;
+    --stemi-shadow: 0 6px 17px rgba(19,77,135,.075)
+}
+
+html {
+    scroll-behavior: smooth
+}
+
+body {
+    font-family: Inter,"Segoe UI",Arial,sans-serif;
+    color: var(--stemi-ink);
+    background: #f4fbff
+}
+
+.stemi-app {
+    grid-template-columns: var(--sidebar-width) minmax(0,1fr);
+    min-height: 100vh;
+    gap: 0
+}
+
+.stemi-sidebar {
+    width: var(--sidebar-width);
+    background: linear-gradient(150deg,#fff 0%,#f0faff 55%,#e8f8ff 100%);
+    border-right: 1px solid #b9dcfb;
+    box-shadow: 3px 0 12px rgba(1,86,176,.035);
+    display: flex;
+    flex-direction: column;
+    padding: 5px 12px 14px;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    min-height: 620px;
+    overflow-y: auto;
+    z-index: 20
+}
+
+.stemi-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 10px 13px;
+    border-bottom: 1px solid #cbe6fa;
+    color: var(--stemi-ink)
+}
+
+.stemi-logo-icon {
+    color: var(--stemi-blue);
+    width: 45px;
+    height: 45px;
+    flex: none
+}
+
+.stemi-logo-icon svg {
+    width: 100%;
+    height: 100%
+}
+
+.stemi-logo strong {
+    font-size: 21px;
+    letter-spacing: -.06em;
+    font-weight: 850;
+    display: block;
+    line-height: 1
+}
+
+.stemi-blue {
+    color: #0b98e6
+}
+
+.stemi-logo small {
+    display: block;
+    font-size: 10px;
+    line-height: 1.45;
+    letter-spacing: 0;
+    margin-top: 5px;
+    color: #365277
+}
+
+.stemi-role {
+    margin: 12px 6px 17px;
+    border: 1px solid #d6e7fb;
+    border-radius: 8px;
+    background: rgba(255,255,255,.82);
+    box-shadow: 0 2px 6px #b6d8f440;
+    padding: 11px 10px;
+    font-size: 11px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: #10264a
+}
+
+.stemi-role-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    background: #1188f4;
+    box-shadow: 0 0 0 4px #dceeff;
+    flex: none
+}
+
+.stemi-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding-top: 1px
+}
+
+.stemi-nav-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 14px;
+    border-radius: 8px;
+    color: #172950;
+    font-size: 13px;
+    font-weight: 620;
+    transition: *background* .2s,color .2s
+}
+
+.stemi-nav-link:hover {
+    background: #e4f3ff;
+    color: #006dee
+}
+
+.stemi-nav-link.active {
+    background: linear-gradient(100deg,#0784fc,#076ff2);
+    color: #fff;
+    box-shadow: 0 6px 13px #0087f726
+}
+
+.nav-glyph {
+    font-size: 21px;
+    font-weight: 500;
+    line-height: 1;
+    width: 24px;
+    text-align: center
+}
+
+.stemi-nav-chevron {
+    margin-left: auto
+}
+
+.stemi-nav-label {
+    color: #7695b5;
+    letter-spacing: .1em;
+    font-size: 10px;
+    font-weight: 800;
+    margin: 15px 12px 6px
+}
+
+.stemi-nav-sub {
+    border-left: 1.5px solid #8bbce6;
+    margin: 0 0 5px 29px;
+    padding: 5px 4px 5px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px
+}
+
+.stemi-nav-sub a,
+.stemi-nav-sub span {
+    display: block;
+    position: relative;
+    font-size: 12px;
+    padding: 9px 9px 9px 17px;
+    color: #233a63;
+    border-radius: 7px
+}
+
+.stemi-nav-sub a:before,
+.stemi-nav-sub span:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 16px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #6eafdf
+}
+
+.stemi-nav-sub a.selected,
+.stemi-nav-sub span.selected {
+    color: #0079e8;
+    background: #fff;
+    font-weight: 750
+}
+
+.stemi-sidebar-footer {
+    margin-top: auto;
+    padding: 24px 10px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 3px
+}
+
+.stemi-footer-line {
+    height: 3px;
+    width: 40px;
+    background: #0b91f3;
+    border-radius: 3px;
+    margin-bottom: 9px
+}
+
+.stemi-sidebar-footer small {
+    color: #42658b;
+    font-size: 11px
+}
+
+.stemi-sidebar-footer>strong {
+    color: #0580ef;
+    font-size: 12px
+}
+
+.stemi-school {
+    margin-top: 13px;
+    background: #fff;
+    padding: 13px;
+    border: 1px solid #d2e4f5;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 65px;
+    box-shadow: var(--stemi-shadow)
+}
+
+.stemi-school img {
+    max-width: 130px;
+    width: 100%;
+    max-height: 52px;
+    object-fit: contain
+}
+
+.stemi-main {
+    min-width: 0;
+    background: linear-gradient(170deg,#f6fcff 0%,#edf8ff 100%);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow: clip
+}
+
+.stemi-topbar {
+    background: rgba(255,255,255,.94)!important;
+    margin: 4px 8px 0;
+    border: 1px solid #d1e4f6;
+    border-radius: 12px;
+    min-height: 64px;
+    padding: 9px 15px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    box-shadow: var(--stemi-shadow);
+    position: relative;
+    top: auto;
+    z-index: 15
+}
+
+.stemi-menu-button {
+    background: #fff;
+    color: #06335f;
+    display: grid;
+    place-items: center;
+    flex: none;
+    border: 1px solid #d8e9fb;
+    border-radius: 8px;
+    width: 40px;
+    height: 40px;
+    box-shadow: 0 2px 6px #b6d8f455;
+    cursor: pointer
+}
+
+.stemi-menu-button svg {
+    width: 22px;
+    height: 22px
+}
+
+.stemi-top-search {
+    height: 42px;
+    max-width: 430px;
+    width: min(43vw,430px);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid #c5dcf0;
+    border-radius: 10px;
+    padding: 0 12px;
+    background: #fbfdff;
+    box-shadow: 0 1px 4px #a2c8e533
+}
+
+.stemi-top-search svg {
+    width: 17px;
+    height: 17px;
+    flex: none;
+    color: #385e8e
+}
+
+.stemi-top-search input {
+    font-size: 12px;
+    color: #102a55;
+    background: transparent;
+    border: 0;
+    outline: 0;
+    min-width: 0;
+    flex: 1
+}
+
+.stemi-top-search button {
+    border: 0;
+    background: transparent;
+    color: #0879ed;
+    font-size: 11px;
+    font-weight: 800;
+    cursor: pointer
+}
+
+.stemi-top-spacer {
+    flex: 1
+}
+
+.stemi-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #386b8e;
+    font-size: 11px;
+    white-space: nowrap
+}
+
+.stemi-status .stemi-role-dot {
+    width: 7px;
+    height: 7px;
+    background: #0abd84;
+    box-shadow: 0 0 0 3px #d8f9ec
+}
+
+.stemi-user-menu {
+    position: relative
+}
+
+.stemi-profile-button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: transparent;
+    border: 0;
+    color: var(--stemi-ink);
+    cursor: pointer;
+    text-align: left
+}
+
+.stemi-avatar {
+    width: 41px;
+    height: 41px;
+    display: grid;
+    place-items: center;
+    color: white;
+    background: linear-gradient(135deg,#12bded,#057ff5);
+    border-radius: 50%;
+    font-size: 16px;
+    font-weight: 700
+}
+
+.stemi-profile-copy {
+    display: flex;
+    flex-direction: column;
+    min-width: 90px
+}
+
+.stemi-profile-copy strong {
+    font-size: 12px;
+    line-height: 1.6;
+    max-width: 155px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap
+}
+
+.stemi-profile-copy small {
+    font-size: 11px;
+    color: #5f7eaa
+}
+
+.stemi-dropdown {
+    top: 100%;
+    right: 0;
+    position: absolute;
+    min-width: 235px;
+    background: #fff;
+    border: 1px solid #d0e5f6;
+    border-radius: 12px;
+    box-shadow: 0 16px 38px #15476e2c;
+    padding: 12px;
+    z-index: 50
+}
+
+.stemi-dropdown[hidden] {
+    display: none!important
+}
+
+.stemi-dropdown-ident {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 6px;
+    border-bottom: 1px solid #e3eef8;
+    gap: 5px
+}
+
+.stemi-dropdown-ident strong {
+    font-size: 13px
+}
+
+.stemi-dropdown-ident small {
+    font-size: 11px;
+    overflow-wrap: anywhere;
+    color: #59718b
+}
+
+.stemi-dropdown a,
+.stemi-dropdown form button {
+    display: block;
+    width: 100%;
+    padding: 12px 8px;
+    background: transparent;
+    border: 0;
+    text-align: left;
+    color: #17365a;
+    font-size: 12px;
+    cursor: pointer
+}
+
+.stemi-dropdown a:hover,
+.stemi-dropdown form button:hover {
+    background: #edf7ff
+}
+
+.stemi-content {
+    padding: 8px 10px 32px!important;
+    flex: 1;
+    width: 100%;
+    max-width: none!important
+}
+
+.stemi-page-banner {
+    min-height: 133px;
+    padding: 16px 24px;
+    border-radius: 13px;
+    border: 1px solid #b1def5;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(95deg,rgba(223,245,254,.98) 0%,rgba(219,241,255,.92) 58%,rgba(222,239,255,.64) 100%),url('../images/Futuristic Cardiology Waveform Background.png') right 45%/cover no-repeat;
+    box-shadow: var(--stemi-shadow);
+    margin-bottom: 10px
+}
+
+.stemi-page-banner>\* {
+    position: relative;
+    z-index: 1
+}
+
+.stemi-crumb {
+    color: #244d76;
+    font-size: 12px;
+    font-weight: 650;
+    margin-bottom: 10px
+}
+
+.stemi-crumb span {
+    color: #173b55;
+    padding: 0 6px
+}
+
+.stemi-crumb a {
+    color: #007eef
+}
+
+.stemi-eyebrow {
+    font-size: 12px;
+    color: #0084fa;
+    font-weight: 800;
+    margin-bottom: 9px
+}
+
+.stemi-page-banner h1 {
+    font-size: clamp(21px,2.3vw,29px);
+    font-weight: 800;
+    color: #081639;
+    margin: 0 0 6px;
+    line-height: 1.12;
+    letter-spacing: -.035em
+}
+
+.stemi-page-banner p {
+    font-size: 13px;
+    line-height: 1.5;
+    color: #385d84;
+    margin: 0
+}
+
+.stemi-kpis {
+    display: grid;
+    grid-template-columns: repeat(4,minmax(0,1fr));
+    gap: 12px;
+    margin: 12px 0
+}
+
+.stemi-kpi {
+    background: #fff;
+    border-radius: 11px;
+    border: 1px solid #d3e5f6;
+    box-shadow: var(--stemi-shadow);
+    padding: 20px 18px;
+    min-height: 116px
+}
+
+.stemi-kpi-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #4d7096;
+    gap: 8px
+}
+
+.stemi-kpi-symbol {
+    background: #e9f6ff;
+    color: #0787f0;
+    width: 30px;
+    height: 30px;
+    border-radius: 9px;
+    display: grid;
+    place-items: center;
+    font-size: 18px
+}
+
+.stemi-kpi strong {
+    display: block;
+    font-size: 27px;
+    margin: 8px 0 4px;
+    color: var(--stemi-ink);
+    font-weight: 800
+}
+
+.stemi-kpi small {
+    color: #7187a4;
+    font-size: 11px
+}
+
+.stemi-card {
+    border: 1px solid #d3e5f6;
+    background: rgba(255,255,255,.96);
+    border-radius: 13px;
+    box-shadow: var(--stemi-shadow);
+    padding: 16px 17px;
+    min-width: 0
+}
+
+.stemi-two-panels {
+    display: grid;
+    grid-template-columns: minmax(0,1.35fr) minmax(280px,1fr);
+    gap: 12px;
+    margin: 12px 0
+}
+
+.stemi-card-heading {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 13px;
+    min-width: 0
+}
+
+.stemi-section-icon {
+    width: 41px;
+    height: 41px;
+    display: grid;
+    place-items: center;
+    flex: none;
+    border-radius: 50%;
+    background: linear-gradient(135deg,#16b8ff,#0477fa);
+    font-size: 22px;
+    color: white
+}
+
+.stemi-card-heading>div {
+    min-width: 0;
+    flex: 1
+}
+
+.stemi-card-heading h2 {
+    font-size: 16px;
+    line-height: 1.15;
+    letter-spacing: -.025em;
+    margin: 0 0 5px;
+    color: #0c1a3e;
+    font-weight: 800
+}
+
+.stemi-card-heading p {
+    font-size: 11.5px;
+    color: #466997;
+    margin: 0;
+    line-height: 1.4
+}
+
+.stemi-text-link {
+    font-size: 12px;
+    color: #0079f4;
+    font-weight: 750;
+    white-space: nowrap
+}
+
+.stemi-table-scroll {
+    max-width: 100%;
+    overflow-x: auto
+}
+
+.stemi-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 12px
+}
+
+.stemi-table th {
+    background: #f2f9ff;
+    color: #48688d;
+    font-size: 10.5px;
+    letter-spacing: .01em;
+    font-weight: 750;
+    padding: 13px 12px;
+    white-space: nowrap;
+    border-bottom: 1px solid #dfebf5
+}
+
+.stemi-table td {
+    padding: 13px 12px;
+    border-bottom: 1px solid #edf4fa;
+    color: #23395d;
+    vertical-align: middle
+}
+
+.stemi-table tr:last-child td {
+    border-bottom: 0
+}
+
+.stemi-table td a {
+    color: #007ff0;
+    font-weight: 750;
+    white-space: nowrap
+}
+
+.stemi-table td small {
+    display: block;
+    margin-top: 5px;
+    color: #7690aa
+}
+
+.stemi-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #e4f4ff;
+    border-radius: 999px;
+    color: #236494;
+    font-size: 11px;
+    padding: 5px 12px;
+    font-weight: 750;
+    white-space: nowrap
+}
+
+.stemi-pill:before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: currentColor
+}
+
+.stemi-pill.completed {
+    background: #d3fbe0;
+    color: #008f35
+}
+
+.stemi-pill.pending {
+    background: #fff2d9;
+    color: #b76d00
+}
+
+.stemi-pill.in_progress {
+    background: #e1f3ff;
+    color: #0b7bb9
+}
+
+.stemi-pill.needs_review {
+    background: #ffecdf;
+    color: #d15318
+}
+
+.stemi-empty {
+    text-align: center;
+    color: #6785a8!important;
+    padding: 30px 15px!important
+}
+
+.stemi-actions-list {
+    display: flex;
+    flex-direction: column;
+    gap: 9px
+}
+
+.stemi-actions-list>a {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    background: #f7fbff;
+    border: 1px solid #e1effa;
+    border-radius: 10px;
+    padding: 11px 12px
+}
+
+.stemi-actions-list>a:hover {
+    background: #eaf7ff
+}
+
+.stemi-action-circle {
+    display: grid;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    color: #008af9;
+    background: #e7f4ff;
+    font-size: 20px
+}
+
+.stemi-actions-list>a>span:nth-child(2) {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 3px
+}
+
+.stemi-actions-list strong {
+    font-size: 12px;
+    color: #183459
+}
+
+.stemi-actions-list small {
+    font-size: 10.5px;
+    color: #68819b
+}
+
+.stemi-actions-list b {
+    color: #0089f0
+}
+
+.stemi-recent-card {
+    margin-top: 12px
+}
+
+.stemi-filter {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 10px 0 16px
+}
+
+.stemi-filter input {
+    min-width: 0;
+    flex: 1;
+    max-width: 360px
+}
+
+.stemi-filter a {
+    color: #2785c9;
+    font-size: 12px
+}
+
+.stemi-primary-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    border-radius: 8px;
+    background: linear-gradient(95deg,#057efa,#076cfa);
+    padding: 11px 16px;
+    color: #fff!important;
+    font-size: 12px;
+    font-weight: 750;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 4px 12px #0876f326;
+    white-space: nowrap
+}
+
+.stemi-primary-btn:hover {
+    filter: brightness(.95)
+}
+
+.stemi-pagination {
+    margin-top: 12px
+}
+
+.stemi-pagination nav {
+    font-size: 12px
+}
+
+.stemi-alert {
+    margin: 0 0 11px;
+    padding: 12px 15px;
+    border-radius: 9px;
+    border: 1px solid;
+    font-size: 12px
+}
+
+.stemi-alert.success {
+    background: #e6fff0;
+    color: #155f3c;
+    border-color: #abedc8
+}
+
+.stemi-alert.error {
+    background: #fff1f1;
+    color: #933;
+    border-color: #f1c3c3
+}
+
+.stemi-alert ul {
+    margin: 6px 0 0;
+    padding-left: 18px
+}
+
+/\* Patient Record: six quick-info cards, gallery/preview/metadata, summary/findings. \*/
+
+.stemi-patient-banner {
+    min-height: 130px
+}
+
+.stemi-patient-kpis {
+    display: grid;
+    grid-template-columns: repeat(6,minmax(0,1fr));
+    gap: 10px;
+    margin-bottom: 9px
+}
+
+.stemi-patient-kpis>div {
+    border: 1px solid #d5e6f7;
+    background: #fff;
+    border-radius: 9px;
+    padding: 11px 14px;
+    box-shadow: 0 3px 9px #2876a717;
+    min-width: 0
+}
+
+.stemi-patient-kpis span:not(.stemi-pill) {
+    display: block;
+    color: #416790;
+    font-size: 11px;
+    margin-bottom: 7px
+}
+
+.stemi-patient-kpis strong {
+    display: block;
+    font-size: 14px;
+    color: #0a193d;
+    overflow-wrap: anywhere
+}
+
+.stemi-ecg-workspace {
+    padding: 14px;
+    margin-bottom: 10px;
+    border-color: #83d1fd
+}
+
+.stemi-ecg-columns {
+    display: grid;
+    grid-template-columns: minmax(220px,.9fr) minmax(350px,1.65fr) minmax(245px,1fr);
+    gap: 12px
+}
+
+.stemi-ecg-thumbnails {
+    background: #fff9fc;
+    border: 1px solid #fac5df;
+    border-radius: 10px;
+    padding: 10px;
+    min-width: 0
+}
+
+.stemi-thumbnail-grid {
+    display: grid;
+    grid-template-columns: repeat(2,minmax(0,1fr));
+    gap: 10px
+}
+
+.stemi-thumbnail {
+    padding: 0;
+    border: 0;
+    text-align: left;
+    background: transparent;
+    cursor: pointer;
+    color: #102248;
+    min-width: 0
+}
+
+.stemi-thumbnail-image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1.7;
+    border: 2px solid transparent;
+    border-radius: 7px;
+    overflow: hidden;
+    background: #fff
+}
+
+.stemi-thumbnail.selected .stemi-thumbnail-image {
+    border-color: #0084ff;
+    box-shadow: 0 0 0 1px #bfe9ff
+}
+
+.stemi-thumbnail-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center
+}
+
+.stemi-thumbnail-name {
+    display: block;
+    font-size: 11px;
+    font-weight: 800;
+    margin-top: 6px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+.stemi-thumbnail small {
+    display: block;
+    font-size: 10px;
+    color: #58769b;
+    margin: 4px 0 0;
+    white-space: nowrap
+}
+
+.stemi-ecg-preview {
+    min-width: 0;
+    border: 1px solid #b7aeff;
+    border-radius: 10px;
+    background: #faf8ff;
+    padding: 12px;
+    box-shadow: 0 2px 6px #7064ec18;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between
+}
+
+.stemi-ecg-preview-photo {
+    position: relative;
+    overflow: hidden;
+    background: #fff;
+    border-radius: 5px;
+    display: grid;
+    place-items: center;
+    flex: 1;
+    min-height: 245px
+}
+
+.stemi-ecg-preview-photo img {
+    display: block;
+    max-height: 310px;
+    width: 100%;
+    object-fit: contain
+}
+
+.stemi-expand {
+    position: absolute;
+    right: 7px;
+    top: 8px;
+    display: grid;
+    place-items: center;
+    background: #fff;
+    box-shadow: 0 1px 8px #7896ad55;
+    border: 1px solid #d9e7f8;
+    border-radius: 6px;
+    width: 34px;
+    height: 33px;
+    font-size: 20px;
+    color: #0177ed;
+    cursor: pointer
+}
+
+.stemi-preview-copy {
+    padding: 9px 2px 0
+}
+
+.stemi-preview-copy strong {
+    display: block;
+    font-size: 12px;
+    color: #11234a
+}
+
+.stemi-preview-copy small {
+    font-size: 11px;
+    color: #54729e;
+    display: block;
+    margin-top: 6px
+}
+
+.stemi-ecg-info {
+    background: linear-gradient(135deg,#f4fdff,#edf9fd);
+    border: 1px solid #8edbff;
+    padding: 11px;
+    border-radius: 10px;
+    min-width: 0
+}
+
+.stemi-info-heading {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding-bottom: 10px
+}
+
+.stemi-info-heading .stemi-section-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 17px
+}
+
+.stemi-info-heading h3 {
+    font-size: 14px;
+    margin: 0 0 4px
+}
+
+.stemi-info-heading p {
+    font-size: 10px;
+    color: #5c789d;
+    margin: 0
+}
+
+.stemi-info-list {
+    margin: 0
+}
+
+.stemi-info-list>div {
+    display: grid;
+    grid-template-columns: 42% 58%;
+    align-items: start;
+    border-top: 1px solid #d2e9f6;
+    padding: 10px 4px;
+    gap: 6px;
+    font-size: 11px
+}
+
+.stemi-info-list dt {
+    color: #376390
+}
+
+.stemi-info-list dd {
+    margin: 0;
+    font-weight: 650;
+    color: #162e52;
+    overflow-wrap: anywhere
+}
+
+.stemi-bottom-grid {
+    display: grid;
+    grid-template-columns: minmax(310px,.95fr) minmax(420px,1.25fr);
+    gap: 10px;
+    align-items: stretch
+}
+
+.stemi-summary {
+    border-color: #f4c254
+}
+
+.stemi-interpretation {
+    border-color: #80d48d
+}
+
+.stemi-summary-grids {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 17px
+}
+
+.stemi-summary-grids dl {
+    margin: 0;
+    border: 1px solid #d9e9f7;
+    border-radius: 7px;
+    overflow: hidden
+}
+
+.stemi-summary-grids dl>div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-bottom: 1px solid #e1ecf6
+}
+
+.stemi-summary-grids dl>div:last-child {
+    border: 0
+}
+
+.stemi-summary-grids dt,
+.stemi-summary-grids dd {
+    padding: 10px 12px;
+    font-size: 11px;
+    margin: 0
+}
+
+.stemi-summary-grids dt {
+    color: #3f6694;
+    background: #f9fcff;
+    border-right: 1px solid #e1ecf6
+}
+
+.stemi-summary-grids dd {
+    color: #0b1e48;
+    font-weight: 700;
+    overflow-wrap: anywhere
+}
+
+.stemi-finding-form label,
+.stemi-upload-form label {
+    display: block;
+    font-size: 11px;
+    color: #16416b;
+    font-weight: 750;
+    margin: 9px 0 5px
+}
+
+.stemi-field-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px
+}
+
+.stemi-finding-form select,
+.stemi-finding-form textarea,
+.stemi-upload-form select,
+.stemi-upload-form input,
+.stemi-filter input {
+    width: 100%;
+    border: 1px solid #bbd8ef;
+    border-radius: 7px;
+    background: #fff;
+    font-size: 12px;
+    color: #123055;
+    padding: 10px;
+    outline-color: #118af4
+}
+
+.stemi-finding-form textarea {
+    resize: vertical;
+    min-height: 65px
+}
+
+.stemi-form-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 14px
+}
+
+.stemi-form-actions>a {
+    color: #3c7099;
+    font-size: 12px
+}
+
+.stemi-check {
+    display: flex!important;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500!important;
+    font-size: 11px!important;
+    cursor: pointer
+}
+
+.stemi-check input {
+    width: 16px;
+    height: 16px;
+    accent-color: #057af5
+}
+
+.stemi-clinical-note {
+    color: #67809f;
+    font-size: 10.5px;
+    line-height: 1.6;
+    margin: 12px 0 0
+}
+
+.stemi-exam-message {
+    background: #f4faff;
+    border: 1px solid #d4e7f8;
+    border-radius: 10px;
+    padding: 14px;
+    font-size: 12px;
+    color: #44648d;
+    line-height: 1.6
+}
+
+.stemi-exam-message form {
+    margin-top: 12px
+}
+
+.stemi-findings-list article {
+    border: 1px solid #d6e9f7;
+    border-radius: 8px;
+    padding: 11px;
+    margin-top: 9px
+}
+
+.stemi-findings-list article>div {
+    display: flex;
+    flex-direction: column;
+    gap: 3px
+}
+
+.stemi-findings-list article strong {
+    font-size: 12px
+}
+
+.stemi-findings-list article small,
+.stemi-findings-list article p {
+    font-size: 11px;
+    color: #5f7491;
+    line-height: 1.5
+}
+
+.stemi-findings-list article .stemi-pill {
+    margin-top: 8px
+}
+
+.stemi-empty-illustration {
+    text-align: center;
+    padding: 35px;
+    color: #6684a2
+}
+
+.stemi-empty-illustration>span {
+    font-size: 45px
+}
+
+.stemi-empty-illustration h3 {
+    color: #172f51
+}
+
+.stemi-image-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 150;
+    background: rgba(5,15,35,.95);
+    color: white;
+    display: flex;
+    flex-direction: column
+}
+
+.stemi-image-modal[hidden] {
+    display: none
+}
+
+.stemi-modal-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 9px 17px;
+    background: #0d2343
+}
+
+.stemi-modal-head>div {
+    display: flex;
+    gap: 8px
+}
+
+.stemi-modal-head button {
+    background: #25486f;
+    border: 1px solid #5e809d;
+    border-radius: 7px;
+    color: white;
+    font-size: 16px;
+    padding: 5px 12px;
+    cursor: pointer
+}
+
+.stemi-modal-scroll {
+    overflow: auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex: 1;
+    padding: 22px
+}
+
+.stemi-modal-scroll img {
+    display: block;
+    margin: auto;
+    width: auto;
+    max-width: none;
+    background: #fff;
+    transform-origin: center top
+}
+
+.stemi-form-card {
+    max-width: 1060px
+}
+
+.stemi-upload-form h3 {
+    font-size: 14px;
+    color: #1d4367;
+    margin: 4px 0 16px
+}
+
+.stemi-upload-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px
+}
+
+.stemi-upload-columns>div {
+    background: #f6fbff;
+    padding: 17px;
+    border-radius: 10px;
+    border: 1px solid #dbebf7
+}
+
+.stemi-file-area {
+    padding: 24px;
+    text-align: center;
+    background: #f7fcff;
+    border: 2px dashed #a0d6fa;
+    border-radius: 11px;
+    margin-top: 5px
+}
+
+.stemi-file-area span {
+    display: block;
+    color: #087ef5;
+    font-size: 37px
+}
+
+.stemi-file-area strong {
+    font-size: 13px;
+    display: block;
+    margin: 8px
+}
+
+.stemi-file-area p {
+    font-size: 11px;
+    color: #587a9c
+}
+
+.stemi-file-area input {
+    max-width: 340px;
+    border: 0;
+    background: transparent;
+    cursor: pointer
+}
+
+.stemi-profile-details>div {
+    display: flex;
+    gap: 12px;
+    border-bottom: 1px solid #e3eff7;
+    padding: 12px
+}
+
+.stemi-profile-details dt {
+    min-width: 145px;
+    color: #4a6e9a;
+    font-size: 12px
+}
+
+.stemi-profile-details dd {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 700
+}
+
+/\* Reduced viewport and collapsed sidebar support \*/
+
+@media(max-width:1200px) {
+    .stemi-ecg-columns {
+        grid-template-columns: minmax(170px,.8fr) minmax(300px,1.4fr)
+    }
+
+    .stemi-ecg-info {
+        grid-column: 1/-1
+    }
+
+    .stemi-info-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 20px
+    }
+
+    .stemi-bottom-grid {
+        grid-template-columns: 1fr 1.1fr
+    }
+
+    .stemi-patient-kpis {
+        grid-template-columns: repeat(3,minmax(0,1fr))
+    }
+
+    .stemi-status {
+        display: none
+    }
+
+}
+
+@media(max-width:900px) {
+    .stemi-app {
+        display: block
+    }
+
+    .stemi-sidebar {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 100;
+        transform: translateX(-105%);
+        transition: transform .25s;
+        height: 100dvh
+    }
+
+    .sidebar-open .stemi-sidebar {
+        transform: translateX(0)
+    }
+
+    .sidebar-overlay {
+        z-index: 90
+    }
+
+    .stemi-main {
+        width: 100%
+    }
+
+    .stemi-content {
+        padding: 10px!important
+    }
+
+    .stemi-topbar {
+        margin: 3px 7px
+    }
+
+    .stemi-top-search {
+        width: 100%;
+        max-width: none
+    }
+
+    .stemi-two-panels {
+        grid-template-columns: 1fr
+    }
+
+    .stemi-bottom-grid {
+        grid-template-columns: 1fr
+    }
+
+    .stemi-ecg-columns {
+        grid-template-columns: minmax(210px,1fr) minmax(300px,1.5fr)
+    }
+
+    .stemi-ecg-info {
+        grid-column: 1/-1
+    }
+
+    .stemi-kpis {
+        grid-template-columns: repeat(2,minmax(0,1fr))
+    }
+
+}
+
+@media(min-width:901px) {
+    body.sidebar-collapsed .stemi-app {
+        grid-template-columns: 0 minmax(0,1fr)
+    }
+
+    body.sidebar-collapsed .stemi-sidebar {
+        transform: translateX(-105%);
+        visibility: hidden
+    }
+
+}
+
+@media(max-width:640px) {
+    .stemi-topbar {
+        gap: 8px;
+        padding: 8px
+    }
+
+    .stemi-top-search {
+        gap: 4px;
+        padding: 0 7px
+    }
+
+    .stemi-top-search button {
+        font-size: 10px
+    }
+
+    .stemi-profile-copy {
+        display: none
+    }
+
+    .stemi-avatar {
+        width: 34px;
+        height: 34px
+    }
+
+    .stemi-page-banner {
+        padding: 16px;
+        min-height: 120px
+    }
+
+    .stemi-page-banner h1 {
+        font-size: 22px
+    }
+
+    .stemi-page-banner p {
+        font-size: 11px
+    }
+
+    .stemi-kpis {
+        gap: 8px
+    }
+
+    .stemi-kpi {
+        padding: 13px;
+        min-height: 97px
+    }
+
+    .stemi-kpi strong {
+        font-size: 22px
+    }
+
+    .stemi-card {
+        padding: 12px
+    }
+
+    .stemi-card-heading h2 {
+        font-size: 14px
+    }
+
+    .stemi-card-heading p {
+        font-size: 10px
+    }
+
+    .stemi-patient-kpis {
+        grid-template-columns: repeat(2,minmax(0,1fr));
+        gap: 7px
+    }
+
+    .stemi-patient-kpis>div {
+        padding: 11px
+    }
+
+    .stemi-ecg-columns {
+        grid-template-columns: 1fr
+    }
+
+    .stemi-ecg-info {
+        grid-column: auto
+    }
+
+    .stemi-thumbnail-grid {
+        grid-template-columns: repeat(2,minmax(0,1fr))
+    }
+
+    .stemi-ecg-preview-photo {
+        min-height: 215px
+    }
+
+    .stemi-summary-grids {
+        grid-template-columns: 1fr
+    }
+
+    .stemi-field-row,
+    .stemi-upload-columns {
+        grid-template-columns: 1fr
+    }
+
+    .stemi-info-list {
+        display: block
+    }
+
+    .stemi-form-actions {
+        align-items: flex-start;
+        flex-wrap: wrap
+    }
+
+}
+
+/* Patient Record: use the available ECG preview width on desktop only.
+   Mobile layouts (900px and below) keep their existing styling. */
+@media (min-width: 901px) {
+    .stemi-ecg-preview-photo img {
+        height: auto;
+        max-height: none;
+    }
+}

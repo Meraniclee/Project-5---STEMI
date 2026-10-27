@@ -1,0 +1,2203 @@
+/*
+|--------------------------------------------------------------------------
+| PULSEWISE Authenticated System Theme
+|--------------------------------------------------------------------------
+|
+| Shared visual theme for Admin, Doctor and Consultant portals.
+|
+*/
+
+
+:root {
+    --navy-950: #061c3b;
+    --navy-900: #082d56;
+    --navy-800: #0a4778;
+
+    --blue-700: #0874d0;
+    --blue-600: #078cf0;
+    --blue-500: #15a7ed;
+    --blue-300: #78d4fa;
+    --blue-200: #bce8fb;
+    --blue-100: #e8f6ff;
+    --blue-50: #f5fbff;
+
+    --cyan-500: #22cfe9;
+
+    --green-500: #10a979;
+    --orange-500: #efa21c;
+    --purple-500: #8457df;
+
+    --text: #102b48;
+    --muted: #6c8195;
+
+    --surface: #ffffff;
+    --surface-soft: #f5faff;
+
+    --border: #dce9f2;
+
+    --shadow:
+        0 12px 34px
+        rgba(14, 65, 103, 0.065);
+
+    --sidebar-width: 270px;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| Global
+|--------------------------------------------------------------------------
+*/
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    color: var(--text);
+
+    background:
+        radial-gradient(
+            circle at 75% 0%,
+            rgba(48, 177, 240, 0.07),
+            transparent 26%
+        ),
+        linear-gradient(
+            135deg,
+            #f8fcff 0%,
+            #f1f8fd 100%
+        );
+}
+
+
+.app-shell {
+    background: transparent;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| Sidebar
+|--------------------------------------------------------------------------
+*/
+
+.app-sidebar {
+    padding:
+        20px
+        14px
+        18px;
+
+    border-right:
+        1px solid
+        #b9ddf1;
+
+    color:
+        var(--navy-900);
+
+    background:
+        radial-gradient(
+            circle at 45% -5%,
+            rgba(255, 255, 255, 0.94),
+            transparent 27%
+        ),
+        linear-gradient(
+            180deg,
+            #eef9ff 0%,
+            #e3f5ff 45%,
+            #d9effd 100%
+        );
+
+    box-shadow:
+        7px 0 28px
+        rgba(26, 102, 155, 0.07);
+
+    scrollbar-color:
+        #a6d6ee
+        transparent;
+
+    z-index: 100;
+}
+
+
+.app-sidebar::-webkit-scrollbar {
+    width: 6px;
+}
+
+
+.app-sidebar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+
+.app-sidebar::-webkit-scrollbar-thumb {
+    border-radius: 99px;
+
+    background:
+        #add9ef;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| Sidebar Brand
+|--------------------------------------------------------------------------
+*/
+
+.pulsewise-sidebar-brand {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    min-height: 84px;
+
+    margin:
+        0 0
+        12px;
+
+    padding:
+        9px
+        8px
+        19px;
+
+    border-bottom:
+        1px solid
+        rgba(56, 151, 213, 0.18);
+}
+
+
+.pulsewise-sidebar-brand::after {
+    content: "";
+
+    position: absolute;
+
+    width: 54px;
+    height: 2px;
+
+    left: 8px;
+    bottom: -1px;
+
+    border-radius: 999px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #078cf0,
+            #24c8ef
+        );
+}
+
+
+.sidebar-logo {
+    width: 48px;
+    height: 45px;
+
+    flex:
+        0 0
+        48px;
+
+    color:
+        var(--blue-600);
+
+    filter:
+        drop-shadow(
+            0 5px 8px
+            rgba(7, 140, 240, 0.13)
+        );
+}
+
+
+.sidebar-logo svg {
+    width: 100%;
+    height: 100%;
+
+    fill: none;
+
+    stroke: currentColor;
+
+    stroke-width: 5;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+
+.pulsewise-brand-copy {
+    min-width: 0;
+
+    display: block;
+}
+
+
+.sidebar-brand-name {
+    display: block;
+
+    color:
+        var(--navy-950);
+
+    font-size: 23px;
+
+    font-weight: 850;
+
+    line-height: 1;
+
+    letter-spacing: -0.75px;
+}
+
+
+.sidebar-brand-name span {
+    color:
+        var(--blue-600);
+}
+
+
+.sidebar-brand-subtitle {
+    display: block;
+
+    max-width: 160px;
+
+    margin-top: 6px;
+
+    color:
+        #5e7992;
+
+    font-size: 8px;
+
+    font-weight: 600;
+
+    line-height: 1.4;
+
+    letter-spacing: 0.015em;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| Role Indicator
+|--------------------------------------------------------------------------
+*/
+
+.pulsewise-role-indicator {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin:
+        0 8px
+        13px;
+
+    padding:
+        8px
+        10px;
+
+    border:
+        1px solid
+        #c7e4f4;
+
+    border-radius: 9px;
+
+    color:
+        #376584;
+
+    background:
+        rgba(255, 255, 255, 0.55);
+
+    box-shadow:
+        inset 0 1px 0
+        rgba(255, 255, 255, 0.7);
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.035em;
+
+    text-transform: uppercase;
+}
+
+
+.pulsewise-role-dot {
+    width: 7px;
+    height: 7px;
+
+    flex:
+        0 0
+        7px;
+
+    border-radius: 50%;
+
+    background:
+        var(--blue-600);
+
+    box-shadow:
+        0 0 0 4px
+        rgba(7, 140, 240, 0.10);
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| Sidebar Navigation
+|--------------------------------------------------------------------------
+*/
+
+.sidebar-navigation {
+    gap: 5px;
+
+    margin-top: 1px;
+}
+
+
+.sidebar-link {
+    position: relative;
+
+    min-height: 47px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    padding:
+        0
+        14px;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        transparent;
+
+    border-radius: 10px;
+
+    color:
+        #466a85;
+
+    background:
+        transparent;
+
+    font-size: 13px;
+
+    font-weight: 650;
+
+    transition:
+        color 150ms ease,
+        background 150ms ease,
+        border-color 150ms ease,
+        transform 150ms ease,
+        box-shadow 150ms ease;
+}
+
+
+.sidebar-link:hover {
+    color:
+        #075d9f;
+
+    border-color:
+        rgba(94, 180, 229, 0.24);
+
+    background:
+        rgba(255, 255, 255, 0.56);
+
+    transform:
+        translateX(2px);
+}
+
+
+.sidebar-link.active {
+    color:
+        #ffffff;
+
+    border-color:
+        rgba(7, 140, 240, 0.30);
+
+    background:
+        linear-gradient(
+            100deg,
+            #0783df,
+            #079fec
+        );
+
+    box-shadow:
+        0 8px 18px
+        rgba(7, 128, 209, 0.17);
+}
+
+
+.sidebar-link.active::before {
+    content: "";
+
+    position: absolute;
+
+    width: 3px;
+
+    left: 0;
+    top: 8px;
+    bottom: 8px;
+
+    border-radius:
+        0 99px 99px 0;
+
+    background:
+        #c7f4ff;
+}
+
+
+.sidebar-link.active::after {
+    content: "";
+
+    position: absolute;
+
+    width: 5px;
+    height: 5px;
+
+    right: 13px;
+
+    border-radius: 50%;
+
+    background:
+        #ffffff;
+
+    box-shadow:
+        0 0 7px
+        rgba(255, 255, 255, 0.8);
+}
+
+
+.sidebar-link-icon {
+    width: 22px;
+    height: 22px;
+
+    display: grid;
+
+    place-items: center;
+
+    flex:
+        0 0 auto;
+}
+
+
+.sidebar-link-icon svg {
+    width: 21px;
+    height: 21px;
+
+    fill: none;
+
+    stroke: currentColor;
+
+    stroke-width: 1.8;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| Sidebar Footer
+|--------------------------------------------------------------------------
+*/
+
+.pulsewise-sidebar-footer {
+    margin-top: auto;
+
+    padding:
+        20px
+        7px
+        2px;
+
+    color:
+        #416b89;
+}
+
+
+.sidebar-footer-line {
+    width: 42px;
+    height: 3px;
+
+    margin-bottom: 12px;
+
+    border-radius: 99px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #078cf0,
+            #25c9ed
+        );
+}
+
+
+.pulsewise-sidebar-tagline {
+    color:
+        #557995;
+
+    font-size: 10px;
+
+    line-height: 1.5;
+}
+
+
+.pulsewise-sidebar-tagline strong {
+    display: block;
+
+    color:
+        #0879be;
+
+    font-size: 11px;
+
+    font-weight: 700;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| MMU Owner Logo
+|--------------------------------------------------------------------------
+|
+| Hide the previous "SYSTEM OWNER" label and centralize MMU.
+|
+*/
+
+.pulsewise-owner-card {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-top: 15px;
+
+    padding:
+        8px;
+
+    border:
+        1px solid
+        #badced;
+
+    border-radius: 11px;
+
+    background:
+        rgba(255, 255, 255, 0.45);
+
+    box-shadow:
+        0 5px 15px
+        rgba(33, 111, 159, 0.05);
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| Remove "SYSTEM OWNER"
+|--------------------------------------------------------------------------
+*/
+
+.pulsewise-owner-card > span {
+    display: none !important;
+}
+
+
+.pulsewise-owner-logo {
+    width: 100%;
+
+    min-height: 49px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding:
+        6px
+        12px;
+
+    border:
+        1px solid
+        rgba(208, 225, 236, 0.7);
+
+    border-radius: 8px;
+
+    background:
+        #ffffff;
+}
+
+
+.pulsewise-owner-logo img {
+    display: block;
+
+    width: 112px;
+
+    max-width: 100%;
+
+    max-height: 38px;
+
+    margin:
+        0 auto;
+
+    object-fit: contain;
+
+    object-position:
+        center center;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| Main Workspace
+|--------------------------------------------------------------------------
+*/
+
+.app-main {
+    min-height: 100vh;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(247, 252, 255, 0.86),
+            rgba(242, 249, 254, 0.95)
+        );
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| Topbar
+|--------------------------------------------------------------------------
+*/
+
+.app-topbar {
+    min-height: 74px;
+
+    gap: 16px;
+
+    padding:
+        12px
+        clamp(
+            20px,
+            2.8vw,
+            38px
+        );
+
+    border-bottom:
+        1px solid
+        rgba(216, 232, 242, 0.9);
+
+    background:
+        rgba(255, 255, 255, 0.88);
+
+    backdrop-filter:
+        blur(16px);
+
+    -webkit-backdrop-filter:
+        blur(16px);
+
+    box-shadow:
+        0 7px 24px
+        rgba(27, 74, 108, 0.035);
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| Mobile PULSEWISE Brand
+|--------------------------------------------------------------------------
+*/
+
+.pulsewise-mobile-brand {
+    display: none;
+
+    align-items: center;
+
+    gap: 7px;
+
+    margin-right: auto;
+}
+
+
+.pulsewise-mobile-heart {
+    width: 30px;
+    height: 28px;
+
+    color:
+        var(--blue-600);
+}
+
+
+.pulsewise-mobile-heart svg {
+    width: 100%;
+    height: 100%;
+
+    fill: none;
+
+    stroke: currentColor;
+
+    stroke-width: 5;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+
+.pulsewise-mobile-brand strong {
+    color:
+        var(--navy-950);
+
+    font-size: 16px;
+
+    font-weight: 850;
+
+    letter-spacing: -0.45px;
+}
+
+
+.pulsewise-mobile-brand strong span {
+    color:
+        var(--blue-600);
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| Mobile Menu
+|--------------------------------------------------------------------------
+*/
+
+.mobile-menu-button {
+    width: 43px;
+    height: 43px;
+
+    border-color:
+        #d8e8f2;
+
+    border-radius: 11px;
+
+    color:
+        var(--navy-900);
+
+    background:
+        #ffffff;
+
+    box-shadow:
+        0 4px 13px
+        rgba(13, 67, 103, 0.05);
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| Search
+|--------------------------------------------------------------------------
+*/
+
+.topbar-search {
+    width:
+        min(
+            560px,
+            100%
+        );
+
+    min-height: 45px;
+
+    border:
+        1px solid
+        #dbe9f2;
+
+    border-radius: 11px;
+
+    background:
+        #f9fcfe;
+
+    transition:
+        background 150ms ease,
+        border-color 150ms ease,
+        box-shadow 150ms ease;
+}
+
+
+.topbar-search:focus-within {
+    border-color:
+        #72bfe9;
+
+    background:
+        #ffffff;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(7, 140, 240, 0.07);
+}
+
+
+.topbar-search span {
+    color:
+        #7a92a6;
+}
+
+
+.topbar-search input {
+    color:
+        var(--navy-950);
+
+    font-size: 13px;
+}
+
+
+.topbar-search input::placeholder {
+    color:
+        #99aabb;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| Topbar Actions
+|--------------------------------------------------------------------------
+*/
+
+.topbar-actions {
+    gap: 10px;
+}
+
+
+.notification-button {
+    width: 43px;
+    height: 43px;
+
+    border:
+        1px solid
+        transparent;
+
+    color:
+        #31516d;
+
+    transition:
+        color 150ms ease,
+        background 150ms ease,
+        border-color 150ms ease;
+}
+
+
+.notification-button:hover {
+    color:
+        var(--blue-600);
+
+    border-color:
+        #dbeaf3;
+
+    background:
+        #f5faff;
+}
+
+
+.notification-dot {
+    width: 8px;
+    height: 8px;
+
+    right: 7px;
+    top: 7px;
+
+    background:
+        #ef476f;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| Profile
+|--------------------------------------------------------------------------
+*/
+
+.profile-button {
+    min-height: 50px;
+
+    gap: 10px;
+
+    padding:
+        4px
+        8px
+        4px
+        5px;
+
+    border:
+        1px solid
+        transparent;
+
+    border-radius: 12px;
+
+    transition:
+        border-color 150ms ease,
+        background 150ms ease;
+}
+
+
+.profile-button:hover {
+    border-color:
+        #dce9f2;
+
+    background:
+        #f8fbfd;
+}
+
+
+.profile-avatar {
+    width: 40px;
+    height: 40px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #096bb8,
+            #0da7dd
+        );
+
+    box-shadow:
+        0 6px 14px
+        rgba(8, 112, 184, 0.16);
+}
+
+
+.profile-copy strong {
+    color:
+        var(--navy-950);
+
+    font-size: 12px;
+}
+
+
+.profile-copy small {
+    color:
+        var(--muted);
+
+    font-size: 10px;
+}
+
+
+.profile-chevron {
+    color:
+        #8094a6;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| Profile Dropdown
+|--------------------------------------------------------------------------
+*/
+
+.profile-dropdown {
+    width: 270px;
+
+    top:
+        calc(
+            100% + 9px
+        );
+
+    padding: 11px;
+
+    border:
+        1px solid
+        #dce9f2;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 24px 55px
+        rgba(13, 55, 87, 0.16);
+}
+
+
+.profile-dropdown-system {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 7px;
+
+    padding: 10px;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eef8ff,
+            #f5fcff
+        );
+}
+
+
+.profile-dropdown-heart {
+    width: 31px;
+    height: 28px;
+
+    flex:
+        0 0
+        31px;
+
+    color:
+        var(--blue-600);
+}
+
+
+.profile-dropdown-heart svg {
+    width: 100%;
+    height: 100%;
+
+    fill: none;
+
+    stroke: currentColor;
+
+    stroke-width: 5;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+
+.profile-dropdown-system strong,
+.profile-dropdown-system span {
+    display: block;
+}
+
+
+.profile-dropdown-system strong {
+    color:
+        var(--navy-950);
+
+    font-size: 11px;
+
+    letter-spacing:
+        0.025em;
+}
+
+
+.profile-dropdown-system span {
+    margin-top: 2px;
+
+    color:
+        var(--muted);
+
+    font-size: 9px;
+}
+
+
+.profile-dropdown-header {
+    padding:
+        10px
+        9px
+        12px;
+}
+
+
+.profile-dropdown-link {
+    display: block;
+
+    margin-top: 5px;
+
+    padding:
+        10px
+        11px;
+
+    border-radius: 8px;
+
+    color:
+        #34556f;
+
+    font-size: 11px;
+
+    font-weight: 650;
+}
+
+
+.profile-dropdown-link:hover {
+    color:
+        var(--blue-700);
+
+    background:
+        #eef8ff;
+}
+
+
+.profile-logout {
+    border-radius: 8px;
+
+    font-size: 11px;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| Main Page Content
+|--------------------------------------------------------------------------
+*/
+
+.page-content {
+    padding:
+        0
+        clamp(
+            20px,
+            2.8vw,
+            38px
+        )
+        42px;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| Alerts
+|--------------------------------------------------------------------------
+*/
+
+.page-alert {
+    position: relative;
+
+    margin-top: 19px;
+
+    padding:
+        13px
+        16px
+        13px
+        42px;
+
+    border-radius: 11px;
+
+    box-shadow:
+        0 7px 18px
+        rgba(20, 65, 95, 0.035);
+
+    font-size: 12px;
+}
+
+
+.page-alert::before {
+    content: "✓";
+
+    position: absolute;
+
+    width: 22px;
+    height: 22px;
+
+    left: 12px;
+    top: 50%;
+
+    transform:
+        translateY(-50%);
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 50%;
+
+    font-size: 11px;
+
+    font-weight: 900;
+}
+
+
+.page-alert-success {
+    color:
+        #176b50;
+
+    border-color:
+        #c9ecde;
+
+    background:
+        #eefaf5;
+}
+
+
+.page-alert-success::before {
+    color:
+        #ffffff;
+
+    background:
+        #20a071;
+}
+
+
+.page-alert-error {
+    color:
+        #a7354b;
+
+    border-color:
+        #f1ccd4;
+
+    background:
+        #fff3f5;
+}
+
+
+.page-alert-error::before {
+    content: "!";
+
+    color:
+        #ffffff;
+
+    background:
+        #d75069;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| Welcome Banner
+|--------------------------------------------------------------------------
+*/
+
+.welcome-banner {
+    min-height: 145px;
+
+    border:
+        1px solid
+        #d8ecf7;
+
+    border-radius:
+        0 0
+        18px 18px;
+
+    background:
+        radial-gradient(
+            circle at 78% 50%,
+            rgba(46, 193, 238, 0.17),
+            transparent 26%
+        ),
+        linear-gradient(
+            110deg,
+            #e8f7ff 0%,
+            #f4fbff 51%,
+            #e5f7fb 100%
+        );
+
+    box-shadow:
+        0 10px 28px
+        rgba(19, 77, 116, 0.04);
+}
+
+
+.welcome-copy {
+    padding:
+        34px
+        clamp(
+            23px,
+            3vw,
+            38px
+        );
+}
+
+
+.welcome-copy h1 {
+    color:
+        var(--navy-950);
+
+    font-size:
+        clamp(
+            26px,
+            2.4vw,
+            35px
+        );
+
+    letter-spacing:
+        -0.9px;
+}
+
+
+.welcome-copy p {
+    color:
+        #60788d;
+}
+
+
+.banner-ecg {
+    stroke:
+        #169edd;
+}
+
+
+.banner-heart {
+    color:
+        #42bfe9;
+}
+
+
+.banner-tagline {
+    color:
+        #286994;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| Dashboard Cards
+|--------------------------------------------------------------------------
+*/
+
+.stat-grid {
+    gap: 14px;
+
+    margin-top: 17px;
+}
+
+
+.stat-card {
+    min-height: 108px;
+
+    border-color:
+        #dce9f2;
+
+    border-radius: 14px;
+
+    background:
+        rgba(255, 255, 255, 0.98);
+
+    box-shadow:
+        0 9px 25px
+        rgba(23, 67, 101, 0.055);
+
+    transition:
+        transform 160ms ease,
+        border-color 160ms ease,
+        box-shadow 160ms ease;
+}
+
+
+.stat-card:hover {
+    transform:
+        translateY(-2px);
+
+    border-color:
+        #c8e0ef;
+
+    box-shadow:
+        0 14px 31px
+        rgba(23, 67, 101, 0.085);
+}
+
+
+.dashboard-panel {
+    border-color:
+        #dce9f2;
+
+    border-radius: 15px;
+
+    background:
+        rgba(255, 255, 255, 0.99);
+
+    box-shadow:
+        0 10px 28px
+        rgba(26, 70, 103, 0.055);
+}
+
+
+.panel-heading h2 {
+    color:
+        var(--navy-950);
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| Shared Buttons
+|--------------------------------------------------------------------------
+*/
+
+.primary-button {
+    border-radius: 9px;
+
+    color:
+        #ffffff;
+
+    background:
+        linear-gradient(
+            120deg,
+            #0875cf,
+            #069fe0
+        );
+
+    box-shadow:
+        0 7px 15px
+        rgba(7, 128, 199, 0.13);
+
+    transition:
+        transform 150ms ease,
+        box-shadow 150ms ease;
+}
+
+
+.primary-button:hover {
+    transform:
+        translateY(-1px);
+
+    box-shadow:
+        0 10px 20px
+        rgba(7, 128, 199, 0.19);
+}
+
+
+.secondary-button {
+    color:
+        #0b74b9;
+
+    border-color:
+        #cce5f4;
+
+    background:
+        #eef8fe;
+}
+
+
+.outline-button {
+    color:
+        #0877c5;
+
+    border-color:
+        #bcdcf0;
+
+    background:
+        #ffffff;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| Role Tabs
+|--------------------------------------------------------------------------
+*/
+
+.role-tabs {
+    border-color:
+        #d5e6f0;
+
+    background:
+        #f4f9fc;
+}
+
+
+.role-tabs a.active {
+    color:
+        #ffffff;
+
+    background:
+        linear-gradient(
+            120deg,
+            #0874c9,
+            #0e9fd2
+        );
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| Tables
+|--------------------------------------------------------------------------
+*/
+
+.responsive-table {
+    border-color:
+        #e1ebf2;
+
+    border-radius: 11px;
+
+    background:
+        #ffffff;
+}
+
+
+.heartscope-table {
+    background:
+        #ffffff;
+}
+
+
+.heartscope-table thead {
+    background:
+        #f5f9fc;
+}
+
+
+.heartscope-table th {
+    color:
+        #486178;
+
+    font-size: 10px;
+
+    letter-spacing:
+        0.035em;
+
+    text-transform:
+        uppercase;
+}
+
+
+.heartscope-table tbody tr {
+    transition:
+        background 140ms ease;
+}
+
+
+.heartscope-table tbody tr:hover {
+    background:
+        #f8fcff;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| Upload Area
+|--------------------------------------------------------------------------
+*/
+
+.upload-drop-zone {
+    border-color:
+        #74c6eb;
+
+    background:
+        linear-gradient(
+            180deg,
+            #fcfeff,
+            #f2faff
+        );
+}
+
+
+.upload-drop-zone:hover {
+    border-color:
+        #139bda;
+
+    background:
+        #ecf8ff;
+}
+
+
+.filename-guide {
+    background:
+        #eef7fd;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| Shared Module Panels
+|--------------------------------------------------------------------------
+*/
+
+.patient-panel,
+.doctor-panel,
+.consultant-panel,
+.report-panel,
+.settings-panel,
+.sound-upload-card,
+.patient-mobile-card {
+    border-color:
+        #dce9f2 !important;
+
+    box-shadow:
+        0 10px 28px
+        rgba(23, 67, 101, 0.05);
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| Mobile / Tablet
+|--------------------------------------------------------------------------
+*/
+
+@media (max-width: 900px) {
+
+    body.sidebar-open {
+        overflow: hidden;
+    }
+
+
+    .app-shell {
+        display: block;
+    }
+
+
+    .app-sidebar {
+        position: fixed;
+
+        width:
+            min(
+                290px,
+                86vw
+            );
+
+        height: 100vh;
+
+        left: 0;
+        top: 0;
+
+        transform:
+            translateX(-104%);
+
+        transition:
+            transform
+            220ms ease;
+
+        border-right:
+            1px solid
+            #b9dff1;
+
+        box-shadow:
+            18px 0 45px
+            rgba(11, 72, 113, 0.20);
+
+        z-index: 1000;
+    }
+
+
+    body.sidebar-open
+    .app-sidebar {
+        transform:
+            translateX(0);
+    }
+
+
+    .sidebar-overlay {
+        position: fixed;
+
+        inset: 0;
+
+        z-index: 900;
+
+        display: block;
+
+        opacity: 0;
+
+        visibility: hidden;
+
+        background:
+            rgba(6, 32, 54, 0.45);
+
+        backdrop-filter:
+            blur(3px);
+
+        -webkit-backdrop-filter:
+            blur(3px);
+
+        transition:
+            opacity 200ms ease,
+            visibility 200ms ease;
+    }
+
+
+    body.sidebar-open
+    .sidebar-overlay {
+        opacity: 1;
+
+        visibility: visible;
+    }
+
+
+    .app-topbar {
+        min-height: 68px;
+
+        padding:
+            10px
+            16px;
+    }
+
+
+    .mobile-menu-button {
+        display: grid;
+    }
+
+
+    .pulsewise-mobile-brand {
+        display: flex;
+    }
+
+
+    .topbar-search {
+        margin-left: auto;
+
+        width:
+            min(
+                360px,
+                45vw
+            );
+    }
+
+
+    .profile-copy {
+        display: none;
+    }
+
+
+    .profile-chevron {
+        display: none;
+    }
+
+
+    .profile-button {
+        min-height: 44px;
+
+        padding: 2px;
+    }
+
+
+    .profile-avatar {
+        width: 39px;
+        height: 39px;
+    }
+
+
+    .page-content {
+        padding:
+            0
+            17px
+            34px;
+    }
+
+
+    .pulsewise-owner-card {
+        margin-bottom: 8px;
+    }
+
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| Phone
+|--------------------------------------------------------------------------
+*/
+
+@media (max-width: 650px) {
+
+    .app-topbar {
+        gap: 8px;
+    }
+
+
+    .pulsewise-mobile-brand {
+        flex: 1;
+    }
+
+
+    .topbar-search {
+        display: none;
+    }
+
+
+    .notification-button {
+        width: 40px;
+        height: 40px;
+    }
+
+
+    .profile-avatar {
+        width: 37px;
+        height: 37px;
+    }
+
+
+    .page-content {
+        padding:
+            0
+            13px
+            30px;
+    }
+
+
+    .welcome-banner {
+        min-height: 126px;
+
+        border-radius:
+            0 0
+            15px 15px;
+    }
+
+
+    .welcome-copy {
+        width: 72%;
+
+        padding:
+            26px
+            17px;
+    }
+
+
+    .welcome-copy h1 {
+        font-size: 23px;
+    }
+
+
+    .welcome-copy p {
+        font-size: 11px;
+
+        line-height: 1.45;
+    }
+
+
+    .welcome-visual {
+        min-width: 0;
+    }
+
+
+    .banner-tagline {
+        display: none;
+    }
+
+
+    .banner-heart {
+        right: 18px;
+
+        opacity: 0.36;
+    }
+
+
+    .banner-ecg {
+        width: 100%;
+
+        left: 0;
+
+        opacity: 0.5;
+    }
+
+
+    .profile-dropdown {
+        position: fixed;
+
+        width:
+            calc(
+                100vw - 26px
+            );
+
+        right: 13px;
+        top: 72px;
+    }
+
+
+    .pulsewise-sidebar-brand {
+        min-height: 78px;
+    }
+
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| Small Phone
+|--------------------------------------------------------------------------
+*/
+
+@media (max-width: 420px) {
+
+    .pulsewise-mobile-brand strong {
+        font-size: 14px;
+    }
+
+
+    .pulsewise-mobile-heart {
+        width: 27px;
+        height: 25px;
+    }
+
+
+    .notification-button {
+        display: none;
+    }
+
+
+    .app-sidebar {
+        width:
+            min(
+                280px,
+                89vw
+            );
+    }
+
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| Reduced Motion
+|--------------------------------------------------------------------------
+*/
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior:
+            auto !important;
+
+        transition-duration:
+            0.01ms !important;
+
+        animation-duration:
+            0.01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+    }
+
+}
+
+/*
+|--------------------------------------------------------------------------
+| Authenticated PULSEWISE Wallpaper
+|--------------------------------------------------------------------------
+|
+| Shared by Administrator, Doctor and Consultant portals through the
+| authenticated HeartScope layout. The overlay remains soft for readability,
+| but is lighter than before so the cardiology artwork is more visible.
+|
+*/
+
+.app-main {
+    background-image:
+        linear-gradient(
+            180deg,
+            rgba(245, 251, 255, 0.64) 0%,
+            rgba(243, 249, 255, 0.70) 48%,
+            rgba(246, 251, 255, 0.76) 100%
+        ),
+        url("../images/Futuristic%20Cardiology%20Waveform%20Background.png");
+
+    background-size:
+        cover,
+        cover;
+
+    background-position:
+        center top,
+        center center;
+
+    background-repeat:
+        no-repeat,
+        no-repeat;
+
+    background-attachment:
+        fixed,
+        fixed;
+}
+
+/*
+ * Keep the wallpaper visible beneath the sticky glass topbar while still
+ * protecting content readability.
+ */
+.app-topbar {
+    background: rgba(255, 255, 255, 0.78);
+}
+
+@media (max-width: 900px) {
+    /*
+     * Mobile wallpaper:
+     * use the dedicated portrait artwork at viewport dimensions instead of
+     * sizing it against the full scrollable page height. This keeps the heart
+     * at the upper-right and ECG pulse at the lower-left visible on phones.
+     */
+    body {
+        background-color: #eaf6fd;
+
+        background-image:
+            linear-gradient(
+                180deg,
+                rgba(245, 251, 255, 0.48) 0%,
+                rgba(244, 250, 255, 0.54) 52%,
+                rgba(246, 251, 255, 0.60) 100%
+            ),
+            url("../images/cardiac-auscultation-map-mobile.png");
+
+        background-size:
+            100vw 100vh,
+            100vw 100vh;
+
+        background-position:
+            center center,
+            center center;
+
+        background-repeat:
+            no-repeat,
+            no-repeat;
+
+        background-attachment:
+            fixed,
+            fixed;
+    }
+
+    .app-main {
+        background-color: transparent;
+
+        background-image:
+            linear-gradient(
+                180deg,
+                rgba(245, 251, 255, 0.48) 0%,
+                rgba(244, 250, 255, 0.54) 52%,
+                rgba(246, 251, 255, 0.60) 100%
+            ),
+            url("../images/cardiac-auscultation-map-mobile.png");
+
+        background-size:
+            100vw 100vh,
+            100vw 100vh;
+
+        background-position:
+            center center,
+            center center;
+
+        background-repeat:
+            no-repeat,
+            no-repeat;
+
+        background-attachment:
+            fixed,
+            fixed;
+    }
+
+    .app-topbar {
+        background: rgba(255, 255, 255, 0.80);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+    .app-main {
+        background-image:
+            linear-gradient(
+                180deg,
+                rgba(246, 251, 255, 0.82),
+                rgba(243, 249, 255, 0.86)
+            ),
+            url("../images/Futuristic%20Cardiology%20Waveform%20Background.png");
+    }
+}
+
+@media (max-width: 900px) and (prefers-reduced-transparency: reduce) {
+    body,
+    .app-main {
+        background-image:
+            linear-gradient(
+                180deg,
+                rgba(246, 251, 255, 0.76),
+                rgba(243, 249, 255, 0.80)
+            ),
+            url("../images/cardiac-auscultation-map-mobile.png");
+
+        background-size:
+            100vw 100vh,
+            100vw 100vh;
+
+        background-position:
+            center center,
+            center center;
+
+        background-attachment:
+            fixed,
+            fixed;
+    }
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| Desktop Sidebar Collapse Control
+|--------------------------------------------------------------------------
+|
+| The existing shared topbar menu button doubles as a desktop collapse control.
+| Mobile keeps the existing slide-in navigation behaviour. Because these styles
+| live in the shared authenticated theme, Administrator, Doctor and Consultant
+| portals all receive the same behaviour.
+|
+*/
+
+@media (min-width: 901px) {
+    .app-shell {
+        transition:
+            grid-template-columns 220ms ease;
+    }
+
+    .app-sidebar {
+        transition:
+            width 220ms ease,
+            padding 220ms ease,
+            border-color 180ms ease,
+            opacity 160ms ease,
+            transform 220ms ease,
+            box-shadow 180ms ease;
+    }
+
+    /*
+     * Desktop toggle is intentionally compact and softly highlighted, matching
+     * the reference placement immediately before the topbar search field.
+     */
+    .mobile-menu-button {
+        display: grid;
+        width: 42px;
+        height: 42px;
+        flex: 0 0 42px;
+        border: 1px solid #e2dafa;
+        border-radius: 12px;
+        color: #9a82d4;
+        background: rgba(245, 241, 255, 0.92);
+        box-shadow:
+            0 4px 14px
+            rgba(101, 78, 157, 0.08);
+        transition:
+            color 150ms ease,
+            background 150ms ease,
+            border-color 150ms ease,
+            box-shadow 150ms ease,
+            transform 150ms ease;
+    }
+
+    .mobile-menu-button:hover {
+        color: #7e63c6;
+        border-color: #d2c4f2;
+        background: #f0eaff;
+        box-shadow:
+            0 6px 18px
+            rgba(101, 78, 157, 0.13);
+    }
+
+    .mobile-menu-button:active {
+        transform: scale(0.96);
+    }
+
+    .mobile-menu-button:focus-visible {
+        outline: 3px solid rgba(122, 169, 240, 0.24);
+        outline-offset: 2px;
+    }
+
+    .mobile-menu-button svg {
+        width: 22px;
+        height: 22px;
+        stroke-width: 2.2;
+    }
+
+    body.sidebar-collapsed .app-shell {
+        grid-template-columns:
+            0
+            minmax(0, 1fr);
+    }
+
+    body.sidebar-collapsed .app-sidebar {
+        width: 0;
+        min-width: 0;
+        padding-left: 0;
+        padding-right: 0;
+        border-right-color: transparent;
+        opacity: 0;
+        overflow: hidden;
+        pointer-events: none;
+        transform: translateX(-100%);
+        box-shadow: none;
+    }
+}
+
